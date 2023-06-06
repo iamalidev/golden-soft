@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
 const HeaderNav = styled.div`
   width: 100%;
   display: flex;
-  padding-block: 20px;
+  ${adaptiveValue("padding-block", 20, 14)}
   border-bottom: 1px solid #c4cdd5;
   position: relative;
   z-index: 10;
