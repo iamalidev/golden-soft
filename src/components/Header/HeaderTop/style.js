@@ -13,6 +13,10 @@ const HeaderTopContent = styled.div`
   width: 100%;
   ${Flex.spaceBetween}
   margin-left: auto;
+
+  @media (max-width: 768px) {
+    ${Flex.center}
+  }
 `;
 
 const HeaderTopText = styled.p`
@@ -21,9 +25,13 @@ const HeaderTopText = styled.p`
   line-height: 26px;
   ${adaptiveValue("font-weight", 500, 400)}
   ${adaptiveValue("font-size", 16, 12)}
-  ${adaptiveValue("line-height", 26, 12)}
+  ${adaptiveValue("line-height", 26, 18)}
   letter-spacing: 0.12em;
   color: ${Colors.white};
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const HeaderTopLink = styled.a`

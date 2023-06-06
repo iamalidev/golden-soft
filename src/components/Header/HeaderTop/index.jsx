@@ -1,24 +1,21 @@
 import React from "react";
 import { Container } from "../../Container/style";
-import {
-  HeaderTopWrapper,
-  HeaderTopContent,
-  HeaderTopText,
-  HeaderTopLink,
-} from "./style";
+import * as Style from "./style";
 
 const HeaderTop = () => {
   return (
-    <HeaderTopWrapper>
+    <Style.HeaderTopWrapper>
       <Container>
-        <HeaderTopContent>
-          <HeaderTopText>
+        <Style.HeaderTopContent>
+          <Style.HeaderTopText>
             Скидка 10% по промокоду “ZAMOK” на все заказы до 10.09
-          </HeaderTopText>
-          <HeaderTopLink href="#">Обратный звонок</HeaderTopLink>
-        </HeaderTopContent>
+          </Style.HeaderTopText>
+          <Style.HeaderTopLink href="tel:+998886000860">
+            Обратный звонок
+          </Style.HeaderTopLink>
+        </Style.HeaderTopContent>
       </Container>
-    </HeaderTopWrapper>
+    </Style.HeaderTopWrapper>
   );
 };
 
