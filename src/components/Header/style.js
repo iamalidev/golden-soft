@@ -13,7 +13,8 @@ const HeaderNav = styled.div`
   ${adaptiveValue("padding-block", 20, 14)}
   border-bottom: 1px solid #c4cdd5;
   position: relative;
-  z-index: 10;
+  background-color: ${Colors.white};
+  z-index: 100;
 `;
 
 const HeaderLogo = styled(Link)`

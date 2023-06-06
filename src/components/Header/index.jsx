@@ -61,8 +61,8 @@ const Header = () => {
             </Style.UserActions>
           </Style.HeaderNavContent>
         </Container>
-        <MobileMenu open={mobileMenu}></MobileMenu>
       </Style.HeaderNav>
+        <MobileMenu open={mobileMenu}></MobileMenu>
     </Style.HeaderWrapper>
   );
 };
