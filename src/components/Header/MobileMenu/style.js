@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MobileMenuWrapper = styled.div`
   position: fixed;
-  top: 125px;
+  top: 130px;
   left: 0;
   right: 0;
   bottom: 0;
