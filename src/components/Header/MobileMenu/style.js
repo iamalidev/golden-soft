@@ -12,7 +12,7 @@ const MobileMenuWrapper = styled.div`
   ${Flex.flexBetween}
   flex-direction: column;
   min-height: 706px;
-  padding: 50px 16px 100px 16px;
+  padding: 50px 16px 110px 16px;
   background-color: ${Colors.white};
   border-right: 1px solid #cacdd5;
   transition: 0.4s;
