@@ -32,7 +32,12 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         text-decoration: none;
         list-style: none;
-    } 
+    }
+    
+    /* body {
+        margin-bottom: 1000px;
+        overflow-y: ${({ open }) => (open == true ? "hidden" : "auto")};
+    } */
 
     .swiper {
         width: 100%;

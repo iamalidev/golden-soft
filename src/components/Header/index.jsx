@@ -17,8 +17,6 @@ const Header = () => {
     setMobileMenu(!mobileMenu);
   };
 
-  console.log(mobileMenu);
-
   return (
     <Style.HeaderWrapper>
       <HeaderTop />
@@ -62,7 +60,7 @@ const Header = () => {
           </Style.HeaderNavContent>
         </Container>
       </Style.HeaderNav>
-        <MobileMenu open={mobileMenu}></MobileMenu>
+      <MobileMenu open={mobileMenu}></MobileMenu>
     </Style.HeaderWrapper>
   );
 };
