@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const MobileMenuWrapper = styled.div`
   position: fixed;
-  top: 105px;
+  top: 116px;
   left: 0;
   right: 0;
   bottom: 0;

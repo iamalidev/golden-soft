@@ -6,6 +6,7 @@ const darkBlue = "#0D2436";
 const black = "#161C24";
 const gray = "#454F5B";
 const white = "#FFFFFF";
+const lightGray = "#fafafa";
 
 const colors = {
   blue,
@@ -14,6 +15,7 @@ const colors = {
   black,
   gray,
   white,
+  lightGray,
 };
 
 export const adaptiveValue = (property, startSize, minSize) => {

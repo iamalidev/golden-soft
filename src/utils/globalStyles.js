@@ -48,6 +48,7 @@ export const GlobalStyles = createGlobalStyle`
         text-align: center;
         font-size: 18px;
        ${Flex.center}
+       background-color: ${Colors.lightGray};
     }
 
     .swiper-slide img {
@@ -69,20 +70,24 @@ export const GlobalStyles = createGlobalStyle`
     .swiper-pagination-bullet {
         width: 8px !important;
         height: 8px !important;
-        background-color: #ADD7FF !important;
+        background-color: #add7ff !important;
         position: relative;
-        transition: all .3s;
+        transition: .4s;
+    }
+
+    .swiper-pagination-bullet:hover {
+        background-color: #4295e4 !important;
     }
 
     .swiper-pagination-bullet::after{
         content: "";
         position: absolute;
-        top: -8px;
-        left: -8.4px;
+        top: -9px;
+        left: -9px;
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        border: 1px solid #ADD7FF;
+        border: 1px solid #add7ff;
         opacity: 0;
     }
 
@@ -91,7 +96,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .swiper-pagination-bullet-active {
-        background-color: ${Colors.primaryColor} !important;
+        background-color: ${Colors.blue} !important;
     }
 
     .swiper-pagination-bullet-active.swiper-pagination-bullet::after {
@@ -99,6 +104,6 @@ export const GlobalStyles = createGlobalStyle`
     }    
 
     .swiper-button-disabled svg path {
-        stroke: #A4A4A4 !important ;
+        stroke: #a4a4a4 !important;
     }
 `;
