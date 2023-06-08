@@ -12,12 +12,20 @@ const MobileMenuWrapper = styled.div`
   ${Flex.flexBetween}
   flex-direction: column;
   min-height: 706px;
-  padding: 50px 16px 110px 16px;
+  padding: 40px 16px 160px 16px;
   background-color: ${Colors.white};
   border-right: 1px solid #cacdd5;
   transition: 0.4s;
   transform: ${({ open }) =>
     open == true ? "translateX(0)" : "translateX(-100%)"};
+
+  /* &::after {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 10px;
+    background-color: ${Colors.blue};
+  } */
 `;
 
 const MobileMenuLinks = styled.div`
