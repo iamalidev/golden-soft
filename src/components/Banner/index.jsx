@@ -6,7 +6,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Container } from "../Container/style";
 import * as Style from "./style";
-import firstImg from "../../assets/img/banner1.png";
 import SwiperArrow from "../../assets/img/svgIcons/bannerArrow";
 import { BannerData } from "./data";
 

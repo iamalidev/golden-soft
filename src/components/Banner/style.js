@@ -4,14 +4,14 @@ import { adaptiveValue } from "../../utils/variable";
 
 const BannerWrapper = styled.div`
   ${adaptiveValue("padding-top", 125, 40)}
-  ${adaptiveValue("padding-bottom", 52, 25)}
+  ${adaptiveValue("padding-bottom", 52, 10)}
   background-color: ${Colors.lightGray};
 `;
 
 const SwiperItems = styled.div`
   ${Flex.justFlex}
   gap: 100px;
-  ${adaptiveValue("gap", 100, 22)}
+  ${adaptiveValue("gap", 60, 22)}
 
   @media (max-width: 992px) {
     width: 100%;
@@ -23,7 +23,7 @@ const BannerImgWrapper = styled.div`
   ${adaptiveValue("max-width", 570, 275)}
   width: 100%;
   ${adaptiveValue("heaight", 570, 300)}
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 
   & > img {
     width: 100%;
@@ -50,7 +50,6 @@ const BannerInfo = styled.div`
 
 const InfoTitle = styled.h1`
   max-width: 493px;
-  /* ${adaptiveValue("max-width", 493, 310)} */
   width: 100%;
   font-family: ${Fonts.SFPSemibold};
   ${adaptiveValue("font-size", 44, 22)}
@@ -127,9 +126,7 @@ const Prices = styled.div`
   margin-block: 4px 16px;
 
   @media (max-width: 992px) {
-    /* margin-left: auto; */
     margin-block: 0;
-    /* ${Flex.alignCenter} */
   }
 `;
 
