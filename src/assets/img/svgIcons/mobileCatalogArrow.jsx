@@ -9,7 +9,7 @@ const MobileCatalogArrow = ({ focus }) => (
   >
     <path
       d="M1 1.00003L7 7.00003L1 13"
-      stroke="#161C24"
+      stroke={`${focus ? "#4295e4" : "#161c24"}`}
       {...focus}
       strokeLinecap="round"
       strokeLinejoin="round"

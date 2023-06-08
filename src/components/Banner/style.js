@@ -4,7 +4,7 @@ import { adaptiveValue } from "../../utils/variable";
 
 const BannerWrapper = styled.div`
   ${adaptiveValue("padding-top", 125, 40)}
-  ${adaptiveValue("padding-bottom", 52, 38)}
+  ${adaptiveValue("padding-bottom", 52, 10)}
   background-color: ${Colors.lightGray};
 `;
 
@@ -20,8 +20,10 @@ const SwiperItems = styled.div`
 `;
 
 const BannerImgWrapper = styled.div`
-  ${adaptiveValue("max-width", 590, 275)}
-  ${adaptiveValue("heaight", 520, 300)}
+  ${adaptiveValue("max-width", 570, 275)}
+  width: 100%;
+  ${adaptiveValue("heaight", 570, 300)}
+  margin-bottom: 40px;
 
   & > img {
     width: 100%;
@@ -29,6 +31,7 @@ const BannerImgWrapper = styled.div`
   }
 
   @media (max-width: 992px) {
+    margin-bottom: 0;
     margin: 0 auto;
   }
 `;
@@ -41,24 +44,33 @@ const BannerInfo = styled.div`
 
   @media (max-width: 992px) {
     padding-block: 0;
+    margin: 0 auto;
   }
 `;
 
 const InfoTitle = styled.h1`
-  ${adaptiveValue("max-width", 493, 246)}
+  max-width: 493px;
+  /* ${adaptiveValue("max-width", 493, 310)} */
   width: 100%;
   font-family: ${Fonts.SFPSemibold};
   ${adaptiveValue("font-size", 44, 22)}
   ${adaptiveValue("line-height", 62, 34)}
   color: ${Colors.black};
+
+  @media (max-width: 992px) {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 400px) {
+    width: 260px;
+  }
 `;
 
-const InfoText = styled.p`
-  width: 287px;
-  font-family: ${Fonts.SFPRegular};
-  font-size: 14px;
-  line-height: 24px;
-  color: ${Colors.gray};
+const InfoTexts = styled.div`
+  ${Flex.justFlex}
+  flex-direction: column;
+  gap: 16px;
   margin-block: 20px 32px;
 
   @media (max-width: 992px) {
@@ -66,14 +78,40 @@ const InfoText = styled.p`
   }
 `;
 
+const InfoFirstText = styled.p`
+  width: 287px;
+  font-family: ${Fonts.SFPRegular};
+  font-size: 14px;
+  line-height: 24px;
+  color: ${Colors.gray};
+`;
+
+const InfoSecondText = styled.p`
+  width: 287px;
+  font-family: ${Fonts.SFPRegular};
+  font-size: 14px;
+  line-height: 24px;
+  color: ${Colors.gray};
+`;
+
 const PriceBox = styled.div`
   width: 220px;
   ${Flex.justFlex}
   flex-direction: column;
+  margin-top: 20px;
 
-  /* @media (max-width: 992px) {
+  @media (max-width: 992px) {
     width: 100%;
-  } */
+    margin-top: 0;
+  }
+`;
+
+const PriceTextsWrapper = styled.div`
+  @media (max-width: 992px) {
+    ${Flex.alignCenter}
+    gap: 70px;
+    margin: 20px auto;
+  }
 `;
 
 const PriceText = styled.p`
@@ -87,6 +125,12 @@ const Prices = styled.div`
   ${Flex.alignCenter}
   gap: 12px;
   margin-block: 4px 16px;
+
+  @media (max-width: 992px) {
+    /* margin-left: auto; */
+    margin-block: 0;
+    /* ${Flex.alignCenter} */
+  }
 `;
 
 const NewPrice = styled.p`
@@ -115,6 +159,7 @@ const PriceBtn = styled.button`
   color: ${Colors.white};
   text-align: center;
   transition: 0.4s;
+  cursor: pointer;
 
   &:hover {
     background-color: ${Colors.white};
@@ -122,7 +167,8 @@ const PriceBtn = styled.button`
   }
 
   @media (max-width: 992px) {
-    display: inline;
+    width: 90%;
+    margin: 0 auto;
   }
 `;
 
@@ -145,6 +191,7 @@ const SwiperNavBtn = styled.button`
   display: block;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 `;
 
 export {
@@ -153,7 +200,9 @@ export {
   SwiperItems,
   BannerInfo,
   InfoTitle,
-  InfoText,
+  InfoTexts,
+  InfoFirstText,
+  InfoSecondText,
   PriceBox,
   PriceText,
   Prices,
@@ -162,4 +211,5 @@ export {
   PriceBtn,
   SwiperNavigation,
   SwiperNavBtn,
+  PriceTextsWrapper,
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Style from "./style";
 import HeaderTop from "./HeaderTop";
 import { Container } from "../Container/style";
@@ -16,6 +16,14 @@ const Header = () => {
   const toggle = () => {
     setMobileMenu(!mobileMenu);
   };
+
+  useEffect(() => {
+    if (mobileMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
 
   return (
     <Style.HeaderWrapper>
@@ -59,7 +67,7 @@ const Header = () => {
             </Style.UserActions>
           </Style.HeaderNavContent>
         </Container>
-      <MobileMenu open={mobileMenu}></MobileMenu>
+        <MobileMenu open={mobileMenu}></MobileMenu>
       </Style.HeaderNav>
     </Style.HeaderWrapper>
   );

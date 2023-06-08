@@ -70,13 +70,10 @@ export const GlobalStyles = createGlobalStyle`
     .swiper-pagination-bullet {
         width: 8px !important;
         height: 8px !important;
-        background-color: #add7ff !important;
+        background-color: #0082FF !important;
         position: relative;
         transition: .4s;
-    }
-
-    .swiper-pagination-bullet:hover {
-        background-color: #4295e4 !important;
+        cursor: pointer;
     }
 
     .swiper-pagination-bullet::after{
