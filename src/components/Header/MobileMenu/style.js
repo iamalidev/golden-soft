@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const MobileMenuWrapper = styled.div`
   position: fixed;
-  top: 121px;
+  top: 118px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -15,6 +15,7 @@ const MobileMenuWrapper = styled.div`
   padding: 40px 16px 160px 16px;
   background-color: ${Colors.white};
   border-right: 1px solid #cacdd5;
+  border-top: 1px solid #cacdd5;
   transition: 0.4s;
   transform: ${({ open }) =>
     open == true ? "translateX(0)" : "translateX(-100%)"};
