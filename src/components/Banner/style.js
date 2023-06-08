@@ -6,7 +6,6 @@ const BannerWrapper = styled.div`
   ${adaptiveValue("padding-top", 125, 40)}
   ${adaptiveValue("padding-bottom", 52, 25)}
   background-color: ${Colors.lightGray};
-  border-bottom: 1px solid ${Colors.blue};
 `;
 
 const SwiperItems = styled.div`
