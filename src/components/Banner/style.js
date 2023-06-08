@@ -4,8 +4,9 @@ import { adaptiveValue } from "../../utils/variable";
 
 const BannerWrapper = styled.div`
   ${adaptiveValue("padding-top", 125, 40)}
-  ${adaptiveValue("padding-bottom", 52, 10)}
+  ${adaptiveValue("padding-bottom", 60, 10)}
   background-color: ${Colors.lightGray};
+  border-bottom: 1px solid ${Colors.blue};
 `;
 
 const SwiperItems = styled.div`
