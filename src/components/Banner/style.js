@@ -159,7 +159,7 @@ const PriceBtn = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${Colors.white};
+    background-color: transparent;
     color: ${Colors.blue};
   }
 

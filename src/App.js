@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Category from "./components/Category";
 import AboutUs from "./pages/AboutUs";
 import Cart from "./pages/Cart";
 import Catalog from "./pages/Catalog";
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Category />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/wholesale" element={<WholeSale />} />
         <Route path="/about-us" element={<AboutUs />} />

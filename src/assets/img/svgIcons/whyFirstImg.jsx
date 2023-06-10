@@ -2,8 +2,8 @@ import * as React from "react";
 const WhyFirstImg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={78}
-    height={72}
+    width={82}
+    height={82}
     object-fit="contain"
     viewBox="0 0 78 72"
     fill="none"
