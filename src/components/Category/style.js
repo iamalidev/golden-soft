@@ -17,6 +17,7 @@ const CategoryTitle = styled.h2`
 `;
 
 const CategoryItemsWrapper = styled.div`
+  width: 100%;
   ${Flex.justFlex}
   flex-direction: column;
   ${adaptiveValue("gap", 40, 45)}
@@ -24,7 +25,6 @@ const CategoryItemsWrapper = styled.div`
 `;
 
 const CategoryTopItems = styled.div`
-  ${adaptiveValue("max-width", 1240, 320)}
   ${Flex.justFlex}
   ${adaptiveValue("gap", 40, 20)}
   position: relative;
