@@ -14,6 +14,7 @@ const CategoryTitle = styled.h2`
   ${adaptiveValue("font-size", 44, 22)}
   ${adaptiveValue("line-height", 62, 34)}
   color: ${Colors.black};
+  text-align: center;
 `;
 
 const CategoryItemsWrapper = styled.div`
@@ -66,7 +67,7 @@ const CategoryBottomItems = styled.div`
   ${Flex.justFlex}
   ${adaptiveValue("gap", 40, 20)}
   position: relative;
-  ${adaptiveValue("margin-bottom", 50, 10)}
+  ${adaptiveValue("margin-bottom", 50, 7)}
 
   &::after {
     content: "Замки для дома";
