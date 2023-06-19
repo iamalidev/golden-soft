@@ -42,13 +42,13 @@ const Header = () => {
               </Style.HeaderLogo>
               <Style.HeaderNavLinks>
                 <Style.HeaderLink to="/">Главная</Style.HeaderLink>
-                <Style.HeaderLink to="/catalog">
+                <Style.HeaderLink to="/">
                   Каталог <CatalogArrow />
                 </Style.HeaderLink>
-                <Style.HeaderLink to="/wholesale">
+                <Style.HeaderLink to="/">
                   Оптовая продажа
                 </Style.HeaderLink>
-                <Style.HeaderLink to="/about-us">О нас</Style.HeaderLink>
+                <Style.HeaderLink to="/">О нас</Style.HeaderLink>
               </Style.HeaderNavLinks>
             </Style.HeaderLinksWrapper>
             <Style.UserActions>

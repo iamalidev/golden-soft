@@ -14,7 +14,7 @@ const Home = () => {
       <Statistics />
       <Why />
       <Category />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -159,6 +159,12 @@ const ItemInfoBtn = styled(Link)`
   font-size: 16px;
   line-height: 26px;
   color: ${Colors.black};
+  transition: 0.4s;
+
+  &:hover {
+    background-color: ${Colors.gray};
+    color: ${Colors.white};
+  }
 `;
 
 const CategoryLink = styled.button`

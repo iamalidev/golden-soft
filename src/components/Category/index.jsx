@@ -29,7 +29,7 @@ const Category = () => {
             </Style.CategoryItem>
             <Style.CategoryItem>
               <Style.CategoryItemInfo>
-                <Style.ItemInfoTitle>Для отелей</Style.ItemInfoTitle>
+                <Style.ItemInfoTitle>Для шкафчиков</Style.ItemInfoTitle>
                 <Link to="#">
                   <Style.ItemInfoBtn>Перейти</Style.ItemInfoBtn>
                 </Link>
@@ -42,7 +42,7 @@ const Category = () => {
           <Style.CategoryBottomItems>
             <Style.CategoryItem>
               <Style.CategoryItemInfo>
-                <Style.ItemInfoTitle>Для отелей</Style.ItemInfoTitle>
+                <Style.ItemInfoTitle>Для офисов</Style.ItemInfoTitle>
                 <Link to="#">
                   <Style.ItemInfoBtn>Перейти</Style.ItemInfoBtn>
                 </Link>
@@ -53,7 +53,7 @@ const Category = () => {
             </Style.CategoryItem>
             <Style.CategoryItem>
               <Style.CategoryItemInfo>
-                <Style.ItemInfoTitle>Для отелей</Style.ItemInfoTitle>
+                <Style.ItemInfoTitle>Замки для дома</Style.ItemInfoTitle>
                 <Link to="#">
                   <Style.ItemInfoBtn>Перейти</Style.ItemInfoBtn>
                 </Link>

@@ -33,12 +33,19 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         list-style: none;
     }
-    
-    /* body {
-        margin-bottom: 1000px;
-        overflow-y: ${({ open }) => (open == true ? "hidden" : "auto")};
-    } */
 
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: ${Colors.blue};
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #247DD2;
+    }
+    
     .swiper {
         width: 100%;
         height: 100%;

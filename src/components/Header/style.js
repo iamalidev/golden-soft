@@ -39,6 +39,7 @@ const HeaderLinksWrapper = styled.div`
 const HeaderNavLinks = styled.div`
   ${Flex.alignCenter}
   gap: 32px;
+
   @media (max-width: 800px) {
     display: none;
   }
@@ -49,8 +50,41 @@ const HeaderLink = styled(Link)`
   ${adaptiveValue("font-size", 20, 13)}
   line-height: 24px;
   color: ${Colors.black};
-  ${Flex.alignCenter}
+  padding-inline: 10px;
+  ${Flex.center}
   gap: 8px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    /* left: 0; */
+    width: 0;
+    height: 81px;
+    z-index: -2;
+    /* background-color: ${Colors.lightBlue}; */
+    border-bottom: 1px solid ${Colors.blue};
+    transition: 0.2s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    z-index: -1;
+    background-color: ${Colors.lightBlue};
+    display: none;
+  }
+
+  &:focus::before {
+    display: block;
+    border-bottom: 1px solid ${Colors.blue};
+  }
 `;
 
 const UserActions = styled.div`
