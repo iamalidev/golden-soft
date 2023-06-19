@@ -51,10 +51,10 @@ const FooterLinks = styled.div`
 `;
 
 const FooterLinksTitle = styled.p`
-  ${Fonts.SFPMedium}
+  font-family: ${Fonts.SFPMedium};
   font-size: 18px;
   line-height: 28px;
-  ${Colors.white}
+  color: ${Colors.blue};
 `;
 
 const FooterLinksContent = styled.div`
@@ -64,10 +64,10 @@ const FooterLinksContent = styled.div`
 `;
 
 const FooterLinksLink = styled.a`
-  ${Fonts.SFPLight}
+  font-family: ${Fonts.SFPLight};
   font-size: 16px;
   line-height: 26px;
-  ${Colors.white}
+  color: ${Colors.white};
 `;
 
 const FooterBottom = styled.div`
@@ -75,10 +75,10 @@ const FooterBottom = styled.div`
 `;
 
 const FooterBottomText = styled.p`
-  ${Fonts.SFPRegular}
+  font-family: ${Fonts.SFPRegular};
   font-size: 14px;
   line-height: 17px;
-  ${Colors.white}
+  color: ${Colors.white};
   opacity: 0.6;
   text-align: center;
 `;
