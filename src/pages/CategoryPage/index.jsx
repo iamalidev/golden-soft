@@ -28,9 +28,7 @@ const CategoryPage = () => {
               <CategoryPageCards key={el.id} img={el.img} text={el.text} />
             ))}
           </Style.CategoryList>
-          <Link>
-            <Style.CategoryPageBtn>Смотреть все</Style.CategoryPageBtn>
-          </Link>
+          <Style.CategoryPageBtn>Смотреть все</Style.CategoryPageBtn>
         </Style.CategoryContent>
       </Container>
       <Footer />

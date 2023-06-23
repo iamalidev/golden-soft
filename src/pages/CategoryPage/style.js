@@ -14,7 +14,7 @@ const BreadCrumbs = styled(Breadcrumbs)`
 
 const CategoryContent = styled.div`
   width: 100%;
-  ${adaptiveValue("margin-top", 40, 10)}
+  ${adaptiveValue("margin-top", 40, 20)}
   ${adaptiveValue("margin-bottom", 100, 40)}
   ${Flex.center};
   flex-direction: column;
@@ -22,8 +22,8 @@ const CategoryContent = styled.div`
 
 const CategoryPageTitle = styled.h2`
   font-family: ${Fonts.SFPSemibold};
-  font-size: 44px;
-  line-height: 62px;
+  ${adaptiveValue("font-size", 44, 22)}
+  ${adaptiveValue("line-height", 62, 30)}
   color: #000;
   text-align: center;
 `;
@@ -32,20 +32,28 @@ const CategoryList = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  ${adaptiveValue("column-gap", 50, 20)};
-  ${adaptiveValue("row-gap", 30, 18)};
+  ${adaptiveValue("column-gap", 30, 20)};
+  ${adaptiveValue("row-gap", 50, 18)};
   ${adaptiveValue("margin-block", 64, 20)};
+
+  @media (max-width: 1320px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 `;
 
-const CategoryPageBtn = styled(Link)`
-  width: 220px;
+const CategoryPageBtn = styled.button`
+  width: 230px;
   padding: 12px 60px;
   font-family: ${Fonts.SFPRegular};
   font-size: 16px;
   line-height: 26px;
   color: ${Colors.white};
-  text-align: center;
-  ${adaptiveValue("padding-block", 12, 7)}
   border: 1px solid ${Colors.blue};
   background-color: ${Colors.blue};
   margin: 0 auto;
@@ -57,7 +65,7 @@ const CategoryPageBtn = styled(Link)`
     color: ${Colors.blue};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 620px) {
     width: 100%;
   }
 `;
