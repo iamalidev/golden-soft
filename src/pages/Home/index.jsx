@@ -17,8 +17,8 @@ const Home = () => {
       <Why />
       <Category />
       <PopularProducts />
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Contact />
+      <Footer />
     </>
   );
 };
