@@ -3,6 +3,7 @@ import FacebookIcon from "../../assets/img/svgIcons/facebookIcon";
 import FooterLogo from "../../assets/img/svgIcons/footerLogo";
 import TwitterIcon from "../../assets/img/svgIcons/twitterIcon";
 import VkIcon from "../../assets/img/svgIcons/vkIcon";
+import FooterAccordion from "../Accordion";
 import { Container } from "../Container/style";
 import * as Style from "./style";
 
@@ -77,10 +78,13 @@ const Footer = () => {
               </Style.FooterLinksContent>
             </Style.FooterLinks>
           </Style.FooterLinksWrapper>
+          <Style.AccordionWrapper>
+            <FooterAccordion />
+          </Style.AccordionWrapper>
         </Style.FooterTop>
         <Style.FooterBottom>
           <Style.FooterBottomText>
-            © 2021 Golden Soft All rights reserved.
+            © {new Date().getFullYear()} Golden Soft All rights reserved.
           </Style.FooterBottomText>
         </Style.FooterBottom>
       </Container>

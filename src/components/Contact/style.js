@@ -16,6 +16,10 @@ const ContactItemsWrapper = styled.div`
   flex-direction: column;
   ${adaptiveValue("row-gap", 24, 14)}
   margin: 0 auto;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const ContactTitle = styled.h2`
@@ -42,6 +46,11 @@ const ContactText = styled.p`
 const ContactFormsWrapper = styled.div`
   width: 100%;
   ${Flex.spaceBetween};
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const ContactFormInput = styled.input`
@@ -57,6 +66,10 @@ const ContactFormInput = styled.input`
 
   &:focus {
     outline: 1px solid ${Colors.blue};
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 
@@ -79,6 +92,10 @@ const ContactFormSubmit = styled.button`
   &:active {
     background-color: ${Colors.blue};
     color: ${Colors.white};
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 

@@ -5,29 +5,37 @@ import { adaptiveValue } from "../../utils/variable";
 const FooterWrapper = styled.div`
   padding: 55px 81px 25px 100px;
   background-color: #0d2436;
+
+  @media (max-width: 768px) {
+    padding: 30px 0 15px 0;
+  }
 `;
 
 const FooterTop = styled.div`
   ${Flex.flexBetween}
-  padding-bottom: 50px;
+  ${adaptiveValue("padding-bottom", 50, 30)}
   border-bottom: 1px solid #203546;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
 `;
 
 const FooterSocial = styled.div`
   ${Flex.justFlex}
   flex-direction: column;
   gap: 144px;
+
+  @media (max-width: 1300px) {
+    ${Flex.spaceBetween}
+    flex-direction: row;
+    gap: 0;
+  }
 `;
 
 const FooterLogoWrapper = styled.div`
   ${adaptiveValue("width", 106, 70)}
   ${adaptiveValue("height", 88, 57)}
-
-  & > FooterLogo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
 `;
 
 const FooterSocialMedia = styled.div`
@@ -38,6 +46,16 @@ const FooterSocialMedia = styled.div`
 const FooterLinksWrapper = styled.div`
   ${Flex.justFlex}
   gap: 97px;
+
+  @media (max-width: 1300px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 `;
 
 const FooterLinks = styled.div`
@@ -77,11 +95,20 @@ const FooterBottom = styled.div`
 
 const FooterBottomText = styled.p`
   font-family: ${Fonts.SFPRegular};
-  font-size: 14px;
+  ${adaptiveValue("font-size", 14, 11)}
   line-height: 17px;
   color: ${Colors.white};
   opacity: 0.6;
   text-align: center;
+`;
+
+const AccordionWrapper = styled.div`
+  display: none;
+  margin-top: 30px;
+
+  @media (max-width: 576px) {
+    display: block;
+  }
 `;
 
 export {
@@ -97,4 +124,5 @@ export {
   FooterLinksContent,
   FooterLinksLink,
   FooterBottom,
+  AccordionWrapper,
 };

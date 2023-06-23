@@ -40,8 +40,7 @@ const PopularNavArrow = styled.div`
 const ProductCard = styled(SwiperSlide)`
   width: 288px;
   position: relative;
-  /* border: 1px solid #e7e7e7; */
-  ${Flex.justFlex};
+  ${Flex.justFlex}
   flex-direction: column;
 `;
 
@@ -101,6 +100,21 @@ const ProductOldPrice = styled.span`
   text-decoration: line-through;
 `;
 
+const ProductRateBox = styled.div`
+  width: 100%;
+  ${Flex.center}
+  gap: 8px;
+`;
+
+const RateBoxText = styled.span`
+  width: 100%;
+  font-family: ${Fonts.SFPRegular};
+  font-size: 13px;
+  line-height: 21px;
+  color: ${Colors.gray};
+  text-align: start;
+`;
+
 export {
   PopularProductsWrapper,
   PopularProductsTop,
@@ -115,4 +129,6 @@ export {
   ProductPrice,
   ProductNewPrice,
   ProductOldPrice,
+  ProductRateBox,
+  RateBoxText,
 };

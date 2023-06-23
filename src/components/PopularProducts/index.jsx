@@ -16,6 +16,7 @@ import fourthImg from "../../assets/img/popular_product_img4.png";
 import { popularProductData } from "./data";
 import InCashTrue from "../../assets/img/svgIcons/inCashTrue";
 import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
+import Rate from "../Rate";
 
 const PopularProducts = () => {
   const useSwiperRef = () => {
@@ -91,6 +92,10 @@ const PopularProducts = () => {
                 <img src={el.img} alt="" />
               </Style.ProductCardTop>
               <Style.ProductCardInfo>
+                <Style.ProductRateBox>
+                  <Rate />
+                  <Style.RateBoxText>(12) отзывов</Style.RateBoxText>
+                </Style.ProductRateBox>
                 <Style.ProductCardTitle>{el.title}</Style.ProductCardTitle>
                 <Style.ProductPrice>
                   <Style.ProductNewPrice>{el.newPrice}</Style.ProductNewPrice>
