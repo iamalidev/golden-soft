@@ -63,7 +63,7 @@ const Category = () => {
               </Style.CategoryItemImg>
             </Style.CategoryItem>
           </Style.CategoryBottomItems>
-          <Style.CategoryLink>Все категории</Style.CategoryLink>
+          <Style.CategoryLink to="/category">Все категории</Style.CategoryLink>
         </Style.CategoryItemsWrapper>
       </Container>
     </Style.CategoryWrapper>

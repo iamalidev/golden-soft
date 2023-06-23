@@ -67,7 +67,7 @@ const CategoryBottomItems = styled.div`
   ${Flex.justFlex}
   ${adaptiveValue("gap", 40, 20)}
   position: relative;
-  ${adaptiveValue("margin-bottom", 50, 7)}
+  ${adaptiveValue("margin-bottom", 20, 7)}
 
   &::after {
     content: "Замки для дома";
@@ -167,9 +167,9 @@ const ItemInfoBtn = styled(Link)`
   }
 `;
 
-const CategoryLink = styled.button`
+const CategoryLink = styled(Link)`
   width: 220px;
-  ${Fonts.SFPRegular}
+  font-family: ${Fonts.SFPRegular};
   font-size: 16px;
   line-height: 26px;
   color: ${Colors.white};

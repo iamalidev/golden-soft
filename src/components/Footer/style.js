@@ -5,8 +5,6 @@ import { adaptiveValue } from "../../utils/variable";
 const FooterWrapper = styled.div`
   padding: 55px 81px 25px 100px;
   background-color: #0d2436;
-  /* ${Flex.justFlex}
-  flex-direction: column; */
 `;
 
 const FooterTop = styled.div`
@@ -24,8 +22,6 @@ const FooterSocial = styled.div`
 const FooterLogoWrapper = styled.div`
   ${adaptiveValue("width", 106, 70)}
   ${adaptiveValue("height", 88, 57)}
-  /* background: red; */
-  /* overflow: hidden; */
 
   & > FooterLogo {
     width: 100%;
@@ -54,7 +50,7 @@ const FooterLinksTitle = styled.p`
   font-family: ${Fonts.SFPMedium};
   font-size: 18px;
   line-height: 28px;
-  color: ${Colors.blue};
+  color: ${Colors.white};
 `;
 
 const FooterLinksContent = styled.div`
@@ -68,6 +64,11 @@ const FooterLinksLink = styled.a`
   font-size: 16px;
   line-height: 26px;
   color: ${Colors.white};
+  transition: 0.2s;
+
+  &:hover {
+    color: ${Colors.blue};
+  }
 `;
 
 const FooterBottom = styled.div`

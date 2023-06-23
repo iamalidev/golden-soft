@@ -81,7 +81,11 @@ const HeaderLink = styled(Link)`
     display: none;
   }
 
-  &:focus::before {
+  &.active::after {
+    width: 100%;
+  }
+
+  &.active::before {
     display: block;
     border-bottom: 1px solid ${Colors.blue};
   }

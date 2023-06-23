@@ -16,7 +16,7 @@ const Footer = () => {
               <FooterLogo />
             </Style.FooterLogoWrapper>
             <Style.FooterSocialMedia>
-              <VkIcon />
+              <VkIcon fa fa-rocket />
               <TwitterIcon />
               <FacebookIcon />
             </Style.FooterSocialMedia>
@@ -65,7 +65,7 @@ const Footer = () => {
               </Style.FooterLinksContent>
             </Style.FooterLinks>
             <Style.FooterLinks>
-              <Style.FooterLinksTitle>информация</Style.FooterLinksTitle>
+              <Style.FooterLinksTitle>Информация</Style.FooterLinksTitle>
               <Style.FooterLinksContent>
                 <Style.FooterLinksLink href="#">
                   Доставка и оплата

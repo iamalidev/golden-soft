@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as Style from "./style";
 import HeaderTop from "./HeaderTop";
 import { Container } from "../Container/style";
-import { Link } from "react-router-dom";
+import { Link, useRoutes } from "react-router-dom";
 import HeaderLogo from "../../assets/img/svgIcons/headerLogo";
 import PhoneIcon from "../../assets/img/svgIcons/phoneIcon";
 import LikeIcon from "../../assets/img/svgIcons/likeIcon";
@@ -11,6 +11,7 @@ import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
+  const pathname = window.location.pathname;
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const toggle = () => {
@@ -41,14 +42,30 @@ const Header = () => {
                 <HeaderLogo />
               </Style.HeaderLogo>
               <Style.HeaderNavLinks>
-                <Style.HeaderLink to="/">Главная</Style.HeaderLink>
-                <Style.HeaderLink to="/">
+                <Style.HeaderLink
+                  to="/"
+                  className={`${pathname == "/" ? "active" : ""}`}
+                >
+                  Главная
+                </Style.HeaderLink>
+                <Style.HeaderLink
+                  to="/catalog"
+                  className={`${pathname == "/catalog" ? "active" : ""}`}
+                >
                   Каталог <CatalogArrow />
                 </Style.HeaderLink>
-                <Style.HeaderLink to="/">
+                <Style.HeaderLink
+                  to="/wholesale"
+                  className={`${pathname == "/wholesale" ? "active" : ""}`}
+                >
                   Оптовая продажа
                 </Style.HeaderLink>
-                <Style.HeaderLink to="/">О нас</Style.HeaderLink>
+                <Style.HeaderLink
+                  to="/about-us"
+                  className={`${pathname == "/about-us" ? "active" : ""}`}
+                >
+                  О нас
+                </Style.HeaderLink>
               </Style.HeaderNavLinks>
             </Style.HeaderLinksWrapper>
             <Style.UserActions>

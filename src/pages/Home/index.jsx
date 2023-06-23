@@ -5,6 +5,8 @@ import Header from "../../components/Header";
 import Statistics from "../../components/Statistics";
 import Why from "../../components/Why";
 import Footer from "../../components/Footer";
+import PopularProducts from "../../components/PopularProducts";
+import Contact from "../../components/Contact";
 
 const Home = () => {
   return (
@@ -14,7 +16,9 @@ const Home = () => {
       <Statistics />
       <Why />
       <Category />
-      <Footer />
+      <PopularProducts />
+      {/* <Contact /> */}
+      {/* <Footer /> */}
     </>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
+import Counter from "../../components/Counter";
 
 const WholeSale = () => {
-  return <div>WholeSale</div>;
+  return <Counter />;
 };
 
 export default WholeSale;

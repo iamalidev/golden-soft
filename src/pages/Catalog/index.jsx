@@ -1,7 +1,8 @@
 import React from "react";
+import Header from "../../components/Header";
 
 const Catalog = () => {
-  return <div>Catalog</div>;
+  return <Header />;
 };
 
 export default Catalog;
