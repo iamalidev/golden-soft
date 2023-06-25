@@ -14,6 +14,7 @@ import InCashTrue from "../../assets/img/svgIcons/inCashTrue";
 import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
 import Rate from "../Rate";
 import axios from "axios";
+import ProductCard from "../ProductCard";
 
 const PopularProducts = () => {
   const [data, setData] = useState([]);
@@ -96,25 +97,15 @@ const PopularProducts = () => {
           }}
         >
           {data?.map((el) => (
-            <Style.ProductCard key={el.id}>
-              <Style.ProductCardTop>
-                <Style.InCashBox>
-                  {el.inCash ? <InCashTrue /> : <InCashFalse />}
-                </Style.InCashBox>
-                <img src={el.img} alt="" />
-              </Style.ProductCardTop>
-              <Style.ProductCardInfo>
-                <Style.ProductRateBox>
-                  <Rate />
-                  <Style.RateBoxText>(12) отзывов</Style.RateBoxText>
-                </Style.ProductRateBox>
-                <Style.ProductCardTitle>{el.title}</Style.ProductCardTitle>
-                <Style.ProductPrice>
-                  <Style.ProductNewPrice>{el.newPrice}</Style.ProductNewPrice>
-                  <Style.ProductOldPrice>{el.oldPrice}</Style.ProductOldPrice>
-                </Style.ProductPrice>
-              </Style.ProductCardInfo>
-            </Style.ProductCard>
+            <SwiperSlide key={el.id}>
+              <ProductCard
+                inCash={el.inCash}
+                img={el.img}
+                title={el.title}
+                newPrice={el.newPrice}
+                oldPrice={el.oldPrice}
+              />
+            </SwiperSlide>
           ))}
         </Swiper>
       </Container>
