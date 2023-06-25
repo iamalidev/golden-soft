@@ -1,24 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Mousewheel, Keyboard } from "swiper";
+import { Navigation, Mousewheel, Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import { Container } from "../Container/style";
 import * as Style from "./style";
 import { SwiperNavBtn, SwiperNavigation } from "../Banner/style";
 import SwiperArrow from "../../assets/img/svgIcons/bannerArrow";
 import PopularNavArrow from "../../assets/img/svgIcons/popularSwiperArrow";
-import firstImg from "../../assets/img/popular_product_img1.png";
-import secondImg from "../../assets/img/popular_product_img2.png";
-import thirdImg from "../../assets/img/popular_product_img3.png";
-import fourthImg from "../../assets/img/popular_product_img4.png";
-import { popularProductData } from "./data";
 import InCashTrue from "../../assets/img/svgIcons/inCashTrue";
 import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
 import Rate from "../Rate";
+import axios from "axios";
 
 const PopularProducts = () => {
+  const [data, setData] = useState([]);
+
+  async function getData() {
+    const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
+
+    if ((res.status = 200)) {
+      setData(res.data);
+    }
+  }
+
   const useSwiperRef = () => {
     const [wrapper, setWrapper] = useState(null);
     const ref = useRef(null);
@@ -34,6 +41,10 @@ const PopularProducts = () => {
 
   const [nextEl, nextElRef] = useSwiperRef();
   const [prevEl, prevElRef] = useSwiperRef();
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Style.PopularProductsWrapper>
@@ -60,9 +71,10 @@ const PopularProducts = () => {
             prevEl,
             nextEl,
           }}
+          speed={600}
           mousewheel={true}
           keyboard={true}
-          modules={[Navigation, Mousewheel, Keyboard]}
+          modules={[Navigation, Mousewheel, Keyboard, Autoplay]}
           className="mySwiper"
           breakpoints={{
             320: {
@@ -83,7 +95,7 @@ const PopularProducts = () => {
             },
           }}
         >
-          {popularProductData.map((el) => (
+          {data?.map((el) => (
             <Style.ProductCard key={el.id}>
               <Style.ProductCardTop>
                 <Style.InCashBox>

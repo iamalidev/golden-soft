@@ -9,18 +9,14 @@ import * as Style from "./style";
 import { categoryListData } from "./data";
 import CategoryPageCards from "../../components/CategoryPageCards";
 import { CategoryLink } from "../../components/Category/style";
+import BreadCrumbs from "../../components/BreadCrumbs";
 
 const CategoryPage = () => {
   return (
     <CategoryPageWrapper>
       <Header />
       <Container>
-        <Style.BreadCrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="black" to="/">
-            Главная
-          </Link>
-          <Typography color="gray">Каталог</Typography>
-        </Style.BreadCrumbs>
+        <BreadCrumbs disableText={"Категории"} />
         <Style.CategoryContent>
           <Style.CategoryPageTitle>Категории</Style.CategoryPageTitle>
           <Style.CategoryList>

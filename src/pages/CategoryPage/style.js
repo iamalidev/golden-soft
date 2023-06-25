@@ -1,15 +1,10 @@
 import styled from "styled-components";
-import { Breadcrumbs } from "@mui/material";
 import { Fonts, Colors, Flex } from "../../utils";
 import { adaptiveValue } from "../../utils/variable";
 import { Link } from "react-router-dom";
 
 const CategoryPageWrapper = styled.div`
   width: 100%;
-`;
-
-const BreadCrumbs = styled(Breadcrumbs)`
-  margin-top: 20px !important;
 `;
 
 const CategoryContent = styled.div`
@@ -72,7 +67,6 @@ const CategoryPageBtn = styled.button`
 
 export {
   CategoryPageWrapper,
-  BreadCrumbs,
   CategoryContent,
   CategoryPageTitle,
   CategoryList,

@@ -10,11 +10,15 @@ const HeaderWrapper = styled.header`
 const HeaderNav = styled.div`
   width: 100%;
   display: flex;
-  ${adaptiveValue("padding-block", 20, 14)}
+  padding-block: 20px;
   border-bottom: 1px solid #c4cdd5;
   position: relative;
   background-color: ${Colors.white};
   z-index: 100;
+
+  @media (max-width: 800px) {
+    padding-block: 14px;
+  }
 `;
 
 const HeaderLogo = styled(Link)`
@@ -104,7 +108,7 @@ const CallWrapper = styled.a`
   line-height: 21px;
   color: ${Colors.gray};
 
-  @media (max-width: 800px) {
+  @media (max-width: 920px) {
     display: none;
   }
 `;

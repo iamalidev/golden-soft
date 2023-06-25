@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../utils";
 import { adaptiveValue } from "../../utils/variable";
 
-const CategoryPageCard = styled.li`
+const CategoryPageCard = styled(Link)`
   max-width: 288px;
   width: 100%;
   max-height: 342px;

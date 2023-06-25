@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as Style from "./style";
 
 const CategoryPageCards = ({ img, text }) => {
   return (
-    <Style.CategoryPageCard>
+    <Style.CategoryPageCard to="/catalog">
       <Style.CardImg>
         <img src={img} alt="" />
       </Style.CardImg>

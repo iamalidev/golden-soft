@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import { Container } from "../Container/style";
 import * as Style from "./style";
 import SwiperArrow from "../../assets/img/svgIcons/bannerArrow";
@@ -30,6 +31,7 @@ const HeaderBanner = () => {
     <Style.BannerWrapper>
       <Container>
         <Swiper
+          autoplay={true}
           cssMode={true}
           navigation={{
             prevEl,
@@ -42,7 +44,7 @@ const HeaderBanner = () => {
           }}
           mousewheel={true}
           keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
           className="mySwiper"
         >
           {BannerData.map((el) => {

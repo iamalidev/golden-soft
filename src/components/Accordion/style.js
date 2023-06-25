@@ -14,7 +14,7 @@ const AccordionText = styled(Link)`
   font-family: ${Fonts.SFPLight};
   font-size: 14px;
   line-height: 24px;
-  color: ${Colors.lightGray};
+  color: #c4cdd5;
 `;
 
 export { AccordionText, AccordionTitle };
