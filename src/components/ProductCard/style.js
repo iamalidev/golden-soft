@@ -1,3 +1,4 @@
+import { IconButton } from "@mui/material";
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../utils";
 
@@ -67,7 +68,7 @@ const ProductNewPrice = styled.span`
 
 const ProductOldPrice = styled.span`
   font-family: ${Fonts.SFPLight};
-  font-size: 18px;
+  font-size: 17px;
   line-height: 21px;
   color: ${Colors.gray};
   text-decoration: line-through;
@@ -88,6 +89,14 @@ const RateBoxText = styled.span`
   text-align: start;
 `;
 
+const PriceAndButtons = styled.div`
+  ${Flex.spaceBetween}
+`;
+
+const BtnsWrapper = styled.div`
+  ${Flex.alignCenter};
+`;
+
 export {
   ProductCardWrapper,
   ProductCardTop,
@@ -100,4 +109,6 @@ export {
   ProductRateBox,
   RateBoxText,
   CardImgWrapper,
+  PriceAndButtons,
+  BtnsWrapper,
 };

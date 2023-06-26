@@ -3,6 +3,7 @@ import { Colors, Flex, Fonts } from "../../utils";
 import { adaptiveValue } from "../../utils/variable";
 
 const FooterWrapper = styled.div`
+  width: 100%;
   padding: 55px 81px 25px 100px;
   background-color: #0d2436;
 

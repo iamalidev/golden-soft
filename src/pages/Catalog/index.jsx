@@ -6,6 +6,7 @@ import { Container } from "../../components/Container/style";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import PopularProducts from "../../components/PopularProducts";
+import { PopularProductsTitle } from "../../components/PopularProducts/style";
 import ProductCard from "../../components/ProductCard";
 import * as Style from "./style";
 
@@ -29,6 +30,7 @@ const Catalog = () => {
       <Header />
       <Container>
         <BreadCrumbs disableText={"Каталог"} />
+        <PopularProductsTitle>Накладные электронные замки</PopularProductsTitle>
         <Style.CatalogCardsWrapper>
           {data?.map((el) => (
             <ProductCard
