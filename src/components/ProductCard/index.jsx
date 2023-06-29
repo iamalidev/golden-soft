@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
 import InCashTrue from "../../assets/img/svgIcons/inCashTrue";
 import Rate from "../Rate";
-import AddCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as Style from "./style";
 import { IconButton } from "@mui/material";
-import LikeBtn from "@mui/icons-material/FavoriteBorder";
-import DeleteBtn from "@mui/icons-material/DeleteOutline";
+import AddCartIcon from "@mui/icons-material/ShoppingCartOutlined";
+import RemoveCartIcon from "@mui/icons-material/ShoppingCart";
+import AddLikeIcon from "@mui/icons-material/FavoriteBorder";
+import RemoveLikeIcon from '@mui/icons-material/Favorite';
+import MainContext from "../../Reducer/CartContext";
 
-const ProductCard = ({ inCash, img, title, newPrice, oldPrice }) => {
+const ProductCard = ({ data, select }) => {
+  const { inCash, img, title, newPrice, oldPrice, id } = data;
+
+  const cartToggle = () => {
+    return select ? removeFromCart(id) : addToCart(data);
+  };
+
   const [isClick, setClick] = useState(false);
+
+  const { addToCart, removeFromCart } = useContext(MainContext);
   return (
     <Style.ProductCardWrapper>
       <Style.ProductCardTop>
@@ -33,14 +43,15 @@ const ProductCard = ({ inCash, img, title, newPrice, oldPrice }) => {
           </Style.ProductPrice>
           <Style.BtnsWrapper>
             <IconButton color="error" aria-label="add to shopping cart">
-              <LikeBtn />
+              <AddLikeIcon />
             </IconButton>
-            <IconButton color="primary" aria-label="add to shopping cart">
-              <AddCartIcon />
+            <IconButton
+              onClick={cartToggle}
+              color="primary"
+              aria-label="add to shopping cart"
+            >
+              {select ? <RemoveCartIcon /> : <AddCartIcon />}
             </IconButton>
-            {/* <IconButton color="gray" aria-label="add to shopping cart">
-              <DeleteBtn />
-            </IconButton> */}
           </Style.BtnsWrapper>
         </Style.PriceAndButtons>
       </Style.ProductCardInfo>

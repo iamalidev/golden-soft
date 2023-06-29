@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import Contact from "../../components/Contact";
 import { Container } from "../../components/Container/style";
@@ -9,9 +9,11 @@ import PopularProducts from "../../components/PopularProducts";
 import { PopularProductsTitle } from "../../components/PopularProducts/style";
 import ProductCard from "../../components/ProductCard";
 import * as Style from "./style";
+import MainContext from "../../Reducer/CartContext";
 
 const Catalog = () => {
   const [data, setData] = useState([]);
+  const { cartItems } = useContext(MainContext);
 
   async function getData() {
     const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
@@ -34,12 +36,9 @@ const Catalog = () => {
         <Style.CatalogCardsWrapper>
           {data?.map((el) => (
             <ProductCard
-              id={el.id}
-              inCash={el.inCash}
-              img={el.img}
-              title={el.title}
-              newPrice={el.newPrice}
-              oldPrice={el.oldPrice}
+              key={el.id}
+              data={el}
+              select={cartItems.find((item) => item.id == el.id)}
             />
           ))}
         </Style.CatalogCardsWrapper>

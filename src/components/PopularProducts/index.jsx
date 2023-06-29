@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard, Autoplay } from "swiper";
 import "swiper/css";
@@ -15,9 +15,11 @@ import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
 import Rate from "../Rate";
 import axios from "axios";
 import ProductCard from "../ProductCard";
+import MainContext from "../../Reducer/CartContext";
 
 const PopularProducts = () => {
   const [data, setData] = useState([]);
+  const { cartItems } = useContext(MainContext);
 
   async function getData() {
     const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
@@ -99,11 +101,8 @@ const PopularProducts = () => {
           {data?.map((el) => (
             <SwiperSlide key={el.id}>
               <ProductCard
-                inCash={el.inCash}
-                img={el.img}
-                title={el.title}
-                newPrice={el.newPrice}
-                oldPrice={el.oldPrice}
+                data={el}
+                select={cartItems.find((item) => item.id == el.id)}
               />
             </SwiperSlide>
           ))}

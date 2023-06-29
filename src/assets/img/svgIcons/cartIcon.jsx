@@ -6,6 +6,7 @@ const CartIcon = (props) => (
     height={32}
     viewBox="0 0 32 32"
     fill="none"
+    cursor="pointer"
     {...props}
   >
     <path

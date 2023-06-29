@@ -5,6 +5,9 @@ import { adaptiveValue } from "../../utils/variable";
 
 const HeaderWrapper = styled.header`
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 `;
 
 const HeaderNav = styled.div`
