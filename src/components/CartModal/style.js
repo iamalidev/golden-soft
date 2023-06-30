@@ -10,7 +10,7 @@ const CartModalWindow = styled(Box)`
   transform: translate(-50%, -50%);
   ${adaptiveValue("max-width", 836, 320)};
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   background-color: ${Colors.white};
   ${Flex.flexBetween};
   flex-direction: column;
