@@ -6,14 +6,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Container } from "../Container/style";
-import * as Style from "./style";
-import { SwiperNavBtn, SwiperNavigation } from "../Banner/style";
-import SwiperArrow from "../../assets/img/svgIcons/bannerArrow";
-import PopularNavArrow from "../../assets/img/svgIcons/popularSwiperArrow";
-import InCashTrue from "../../assets/img/svgIcons/inCashTrue";
-import InCashFalse from "../../assets/img/svgIcons/inCashFalse";
-import Rate from "../Rate";
 import axios from "axios";
+import * as Style from "./style";
+import PopularNavArrow from "../../assets/img/svgIcons/popularSwiperArrow";
 import ProductCard from "../ProductCard";
 import MainContext from "../../Reducer/CartContext";
 

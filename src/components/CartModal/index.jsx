@@ -7,6 +7,8 @@ import CartModalBox from "./CartModalBox";
 import CartModalBottom from "./CartModalBottom";
 
 export default function CartModal({ cartModal, handleModal, data }) {
+  console.log(data);
+
   return (
     <div>
       <Modal
@@ -24,7 +26,9 @@ export default function CartModal({ cartModal, handleModal, data }) {
       >
         <Style.CartModalWindow>
           <CartModalTop cartModal={cartModal} handleModal={handleModal} />
-          <CartModalBox product={data} />
+          {data.map((el) => (
+            <CartModalBox key={el.id} product={el} />
+          ))}
           <CartModalBottom />
         </Style.CartModalWindow>
       </Modal>

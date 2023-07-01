@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import * as Style from "./style";
 import HeaderTop from "./HeaderTop";
 import { Container } from "../Container/style";
@@ -11,8 +11,11 @@ import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
 import MobileMenu from "./MobileMenu";
 import { IconButton } from "@mui/material";
 import CartModal from "../CartModal";
+import MainContext from "../../Reducer/CartContext";
 
 const Header = () => {
+  const { cartItems } = useContext(MainContext);
+  // console.log(cartItems, "hiiiiiii");
   const pathname = window.location.pathname;
   const [mobileMenu, setMobileMenu] = useState(false);
   const [cartModal, setCartModal] = useState(false);
@@ -59,16 +62,17 @@ const Header = () => {
                     Главная
                   </Style.HeaderLink>
                   <Style.HeaderLink
+                    to="/category"
+                    className={`${pathname == "/category" ? "active" : ""}`}
+                  >
+                    Категори
+                  </Style.HeaderLink>
+                  <Style.HeaderLink
                     to="/catalog"
                     className={`${pathname == "/catalog" ? "active" : ""}`}
                   >
-                    Каталог <CatalogArrow />
-                  </Style.HeaderLink>
-                  <Style.HeaderLink
-                    to="/wholesale"
-                    className={`${pathname == "/wholesale" ? "active" : ""}`}
-                  >
-                    Оптовая продажа
+                    Каталог
+                    <CatalogArrow />
                   </Style.HeaderLink>
                   <Style.HeaderLink
                     to="/about-us"
@@ -90,7 +94,11 @@ const Header = () => {
               </Style.UserActions>
             </Style.HeaderNavContent>
           </Container>
-          <CartModal cartModal={cartModal} handleModal={handleModal} />
+          <CartModal
+            cartModal={cartModal}
+            handleModal={handleModal}
+            data={cartItems}
+          />
           <MobileMenu open={mobileMenu}></MobileMenu>
         </Style.HeaderNav>
       </Style.HeaderWrapper>

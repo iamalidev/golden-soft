@@ -7,7 +7,7 @@ import { IconButton } from "@mui/material";
 import AddCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveCartIcon from "@mui/icons-material/ShoppingCart";
 import AddLikeIcon from "@mui/icons-material/FavoriteBorder";
-import RemoveLikeIcon from '@mui/icons-material/Favorite';
+import RemoveLikeIcon from "@mui/icons-material/Favorite";
 import MainContext from "../../Reducer/CartContext";
 
 const ProductCard = ({ data, select }) => {
