@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import * as Style from "./style";
 import CartModalTop from "./CartModalTop";
 import { ProductRateBox, RateBoxText } from "../ProductCard/style";
 import Rate from "../Rate";
+import { Button, ButtonBase, IconButton } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import TrashIcon from "../../assets/img/svgIcons/trashIcon";
+import MainContext from "../../Reducer/CartContext";
 
 export default function CartModal({ cartModal, handleModal, data }) {
-  console.log(data);
+  const { img, title, newPrice, id } = data;
+  const { removeFromCart } = useContext(MainContext);
 
   return (
     <div>
@@ -45,8 +50,24 @@ export default function CartModal({ cartModal, handleModal, data }) {
                             </ProductRateBox>
                           </Style.RateBoxWrapper>
                         </Style.InfoBoxTop>
+                        <Style.CounterWrapper>
+                          <Style.CounterBtn>-</Style.CounterBtn>
+                          <Style.CounterBox>1</Style.CounterBox>
+                          <Style.CounterBtn>+</Style.CounterBtn>
+                        </Style.CounterWrapper>
                       </Style.InfoBox>
                     </Style.ItemsInfo>
+                    <Style.DelAndPrice>
+                      <Style.DeleteBox>
+                        <IconButton onClick={() => removeFromCart(el.id)}>
+                          <TrashIcon />
+                        </IconButton>
+                        <Style.DeleteText onClick={() => removeFromCart(el.id)}>
+                          Удалить
+                        </Style.DeleteText>
+                      </Style.DeleteBox>
+                      <Style.Price>33 000₽</Style.Price>
+                    </Style.DelAndPrice>
                   </Style.ItemsWrapper>
                 ))}
               </Style.CartContentWapper>

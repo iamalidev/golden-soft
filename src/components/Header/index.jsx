@@ -9,7 +9,7 @@ import LikeIcon from "../../assets/img/svgIcons/likeIcon";
 import CartIcon from "../../assets/img/svgIcons/cartIcon";
 import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
 import MobileMenu from "./MobileMenu";
-import { IconButton } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import CartModal from "../CartModal";
 import MainContext from "../../Reducer/CartContext";
 
@@ -89,7 +89,9 @@ const Header = () => {
                 </Style.CallWrapper>
                 <Style.ActionItem>
                   <LikeIcon />
-                  <CartIcon onClick={handleModal} />
+                  <Badge badgeContent={cartItems.length} color="primary">
+                    <CartIcon onClick={handleModal} />
+                  </Badge>
                 </Style.ActionItem>
               </Style.UserActions>
             </Style.HeaderNavContent>
