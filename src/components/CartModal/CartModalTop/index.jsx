@@ -1,7 +1,6 @@
 import { IconButton } from "@mui/material";
 import React from "react";
 import ModalCloseIcon from "../../../assets/img/svgIcons/modalCloseIcon";
-import { CartModalTitle } from "../style";
 import * as Style from "./style";
 
 const CartModalTop = ({ cartModal, handleModal }) => {

@@ -10,11 +10,12 @@ import axios from "axios";
 import * as Style from "./style";
 import PopularNavArrow from "../../assets/img/svgIcons/popularSwiperArrow";
 import ProductCard from "../ProductCard";
-import MainContext from "../../Reducer/CartContext";
+import MainContext from "../../context/CartContext";
 
 const PopularProducts = () => {
   const [data, setData] = useState([]);
   const { cartItems } = useContext(MainContext);
+  const { likeItems } = useContext(MainContext);
 
   async function getData() {
     const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
@@ -98,6 +99,7 @@ const PopularProducts = () => {
               <ProductCard
                 data={el}
                 select={cartItems.find((item) => item.id == el.id)}
+                selectLike={likeItems.find((item) => item.id == el.id)}
               />
             </SwiperSlide>
           ))}

@@ -103,7 +103,7 @@ const CounterBox = styled.span`
   color: ${Colors.black};
   ${adaptiveValue("padding-block", 5, 1)}
   ${adaptiveValue("padding-inline", 22, 17)}
-  border: 1px solid #eaeaae;
+  border: 1px solid #eaeaea;
 `;
 
 const CounterBtn = styled.button`
@@ -145,7 +145,7 @@ const DeleteText = styled.span`
 
 const Price = styled.span`
   font-family: ${Fonts.SFPRegular};
-  ${adaptiveValue("font-size", 16, 11)}
+  ${adaptiveValue("font-size", 16, 12)}
   ${adaptiveValue("line-height", 26, 20)}
   color: ${Colors.black};
 `;
@@ -159,6 +159,7 @@ const CartModalBottomWrapper = styled.div`
   border-top: 1px solid #eaeaea;
   position: fixed;
   bottom: 0;
+  /* margin-top: 30px; */
 
   @media (max-width: 700px) {
     flex-direction: column-reverse;

@@ -9,7 +9,7 @@ import PopularProducts from "../../components/PopularProducts";
 import { PopularProductsTitle } from "../../components/PopularProducts/style";
 import ProductCard from "../../components/ProductCard";
 import * as Style from "./style";
-import MainContext from "../../Reducer/CartContext";
+import MainContext from "../../context/CartContext";
 
 const Catalog = () => {
   const [data, setData] = useState([]);

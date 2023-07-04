@@ -8,18 +8,21 @@ import AddCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveCartIcon from "@mui/icons-material/ShoppingCart";
 import AddLikeIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveLikeIcon from "@mui/icons-material/Favorite";
-import MainContext from "../../Reducer/CartContext";
+import MainContext from "../../context/CartContext";
 
-const ProductCard = ({ data, select }) => {
+const ProductCard = ({ data, select, selectLike }) => {
   const { inCash, img, title, newPrice, oldPrice, id } = data;
 
   const cartToggle = () => {
     return select ? removeFromCart(id) : addToCart(data);
   };
 
-  const [isClick, setClick] = useState(false);
+  const likeToggle = () => {
+    return selectLike ? removeFromLike(id) : addToLike(data);
+  };
 
-  const { addToCart, removeFromCart } = useContext(MainContext);
+  const { addToCart, removeFromCart, addToLike, removeFromLike } =
+    useContext(MainContext);
   return (
     <Style.ProductCardWrapper>
       <Style.ProductCardTop>
@@ -38,12 +41,16 @@ const ProductCard = ({ data, select }) => {
         <Style.ProductCardTitle>{title}</Style.ProductCardTitle>
         <Style.PriceAndButtons>
           <Style.ProductPrice>
-            <Style.ProductNewPrice>{newPrice}</Style.ProductNewPrice>
+            <Style.ProductNewPrice>{newPrice}₽</Style.ProductNewPrice>
             <Style.ProductOldPrice>{oldPrice}</Style.ProductOldPrice>
           </Style.ProductPrice>
           <Style.BtnsWrapper>
-            <IconButton color="error" aria-label="add to shopping cart">
-              <AddLikeIcon />
+            <IconButton
+              onClick={likeToggle}
+              color="error"
+              aria-label="add to shopping cart"
+            >
+              {selectLike ? <RemoveLikeIcon /> : <AddLikeIcon />}
             </IconButton>
             <IconButton
               onClick={cartToggle}

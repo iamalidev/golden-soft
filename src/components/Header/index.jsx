@@ -11,16 +11,16 @@ import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
 import MobileMenu from "./MobileMenu";
 import { Badge, IconButton } from "@mui/material";
 import CartModal from "../CartModal";
-import MainContext from "../../Reducer/CartContext";
+import MainContext from "../../context/CartContext";
+import LikeModal from "../LikeModal";
 
 const Header = () => {
   const { cartItems } = useContext(MainContext);
-  // console.log(cartItems, "hiiiiiii");
+  const { likeItems } = useContext(MainContext);
   const pathname = window.location.pathname;
   const [mobileMenu, setMobileMenu] = useState(false);
   const [cartModal, setCartModal] = useState(false);
-
-  console.log(cartModal);
+  const [likeModal, setLikeModal] = useState(false);
 
   const toggle = () => {
     setMobileMenu(!mobileMenu);
@@ -28,6 +28,10 @@ const Header = () => {
 
   const handleModal = () => {
     setCartModal(!cartModal);
+  };
+
+  const handleLike = () => {
+    setLikeModal(!likeModal);
   };
 
   useEffect(() => {
@@ -88,7 +92,9 @@ const Header = () => {
                   +7 (966) 55 88 499
                 </Style.CallWrapper>
                 <Style.ActionItem>
-                  <LikeIcon />
+                  <Badge badgeContent={likeItems?.length} color="primary">
+                    <LikeIcon onClick={handleLike} />
+                  </Badge>
                   <Badge badgeContent={cartItems.length} color="primary">
                     <CartIcon onClick={handleModal} />
                   </Badge>
@@ -96,6 +102,11 @@ const Header = () => {
               </Style.UserActions>
             </Style.HeaderNavContent>
           </Container>
+          <LikeModal
+            likeModal={likeModal}
+            handleLike={handleLike}
+            data={likeItems}
+          />
           <CartModal
             cartModal={cartModal}
             handleModal={handleModal}

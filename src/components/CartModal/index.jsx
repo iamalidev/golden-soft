@@ -5,13 +5,11 @@ import * as Style from "./style";
 import CartModalTop from "./CartModalTop";
 import { ProductRateBox, RateBoxText } from "../ProductCard/style";
 import Rate from "../Rate";
-import { Button, ButtonBase, IconButton } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import { IconButton } from "@mui/material";
 import TrashIcon from "../../assets/img/svgIcons/trashIcon";
-import MainContext from "../../Reducer/CartContext";
+import MainContext from "../../context/CartContext";
 
 export default function CartModal({ cartModal, handleModal, data }) {
-  const { img, title, newPrice, id } = data;
   const { removeFromCart } = useContext(MainContext);
 
   return (
