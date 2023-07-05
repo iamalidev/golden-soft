@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Modal from "@mui/material/Modal";
 import {
-  CartContentWapper,
-  CartModalContent,
   CartModalWindow,
-  DelAndPrice,
-  DeleteBox,
-  DeleteText,
   EmptyText,
   InfoBox,
   InfoBoxTop,
@@ -25,17 +20,27 @@ import { useContext } from "react";
 import { IconButton } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import LikeModalTop from "./LikeModalTop";
-import { LikeContentWrapper, PriceBox } from "./style";
+import { LikeContentWrapper } from "./style";
 import AddCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveCartIcon from "@mui/icons-material/ShoppingCart";
 import * as Style from "./style";
 
-export default function LikeModal({ likeModal, handleLike, data, select }) {
-  const { addToCart, removeFromCart, removeFromLike } = useContext(MainContext);
+export default function LikeModal({ likeModal, handleLike, data }) {
+  const { addToCart, removeFromCart, removeFromLike, cartItems, likeItems } =
+    useContext(MainContext);
 
-  const cartToggle = () => {
-    return select ? removeFromCart(data.id) : addToCart(data);
-  };
+  const select = useMemo(() => {
+    for (const iterator of likeItems) {
+      for (const key of cartItems) {
+        if (iterator.id == key.id) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  }, [cartItems]);
+  console.log(select);
 
   return (
     <div>
@@ -78,20 +83,20 @@ export default function LikeModal({ likeModal, handleLike, data, select }) {
                       </InfoBoxTop>
                     </InfoBox>
                   </ItemsInfo>
-                  <DelAndPrice>
-                    <DeleteBox>
-                      <IconButton onClick={() => removeFromLike(el.id)}>
-                        <TrashIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={cartToggle}
-                        color="primary"
-                        aria-label="add to shopping cart"
-                      >
-                        {select ? <RemoveCartIcon /> : <AddCartIcon />}
-                      </IconButton>
-                    </DeleteBox>
-                  </DelAndPrice>
+                  <Style.Buttons>
+                    <IconButton onClick={() => removeFromLike(el.id)}>
+                      <TrashIcon />
+                    </IconButton>
+                    <IconButton
+                      onClick={() =>
+                        select ? removeFromCart(el.id) : addToCart(el)
+                      }
+                      color="primary"
+                      aria-label="add to shopping cart"
+                    >
+                      {select ? <RemoveCartIcon /> : <AddCartIcon />}
+                    </IconButton>
+                  </Style.Buttons>
                 </ItemsWrapper>
               ))}
             </LikeContentWrapper>

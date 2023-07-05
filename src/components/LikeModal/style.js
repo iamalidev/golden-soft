@@ -28,4 +28,14 @@ const OldPrice = styled.span`
   text-decoration: line-through;
 `;
 
-export { LikeContentWrapper, PriceBox, OldPrice };
+const Buttons = styled.div`
+  ${Flex.alignCenter};
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+  }
+`;
+
+export { LikeContentWrapper, PriceBox, OldPrice, Buttons };

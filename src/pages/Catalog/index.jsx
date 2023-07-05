@@ -14,6 +14,7 @@ import MainContext from "../../context/CartContext";
 const Catalog = () => {
   const [data, setData] = useState([]);
   const { cartItems } = useContext(MainContext);
+  const { likeItems } = useContext(MainContext);
 
   async function getData() {
     const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
@@ -39,6 +40,7 @@ const Catalog = () => {
               key={el.id}
               data={el}
               select={cartItems.find((item) => item.id == el.id)}
+              selectLike={likeItems.find((item) => item.id == el.id)}
             />
           ))}
         </Style.CatalogCardsWrapper>

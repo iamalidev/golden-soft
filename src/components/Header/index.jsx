@@ -15,10 +15,9 @@ import MainContext from "../../context/CartContext";
 import LikeModal from "../LikeModal";
 
 const Header = () => {
-  const { cartItems } = useContext(MainContext);
-  const { likeItems } = useContext(MainContext);
   const pathname = window.location.pathname;
   const [mobileMenu, setMobileMenu] = useState(false);
+  const { cartItems, likeItems } = useContext(MainContext);
   const [cartModal, setCartModal] = useState(false);
   const [likeModal, setLikeModal] = useState(false);
 

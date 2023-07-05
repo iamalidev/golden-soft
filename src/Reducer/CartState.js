@@ -1,8 +1,10 @@
 import { useReducer } from "react";
 import mainReducer from "./CartReducer";
 import {
+  ADD_ONE,
   ADD_TO_CART,
   ADD_TO_LIKE,
+  REMOVE_ONE,
   REMOVE_FROM_CART,
   REMOVE_FROM_LIKE,
 } from "./types";
@@ -26,6 +28,10 @@ const CartState = ({ children }) => {
   const removeFromLike = (id) =>
     dispatch({ type: REMOVE_FROM_LIKE, payload: id });
 
+  const addOne = (id) => dispatch({ type: ADD_ONE, payload: id });
+
+  const removeOne = (id) => dispatch({ type: REMOVE_ONE, payload: id });
+
   return (
     <MainContext.Provider
       value={{
@@ -35,6 +41,8 @@ const CartState = ({ children }) => {
         removeFromCart,
         addToLike,
         removeFromLike,
+        addOne,
+        removeOne,
       }}
     >
       {children}

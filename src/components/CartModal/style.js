@@ -123,7 +123,7 @@ const DelAndPrice = styled.div`
   ${Flex.justFlex};
   flex-direction: column;
   align-items: end;
-  ${adaptiveValue("gap", 68, 15)};
+  ${adaptiveValue("gap", 55, 15)};
 `;
 
 const DeleteBox = styled.div`
@@ -159,7 +159,6 @@ const CartModalBottomWrapper = styled.div`
   border-top: 1px solid #eaeaea;
   position: fixed;
   bottom: 0;
-  /* margin-top: 30px; */
 
   @media (max-width: 700px) {
     flex-direction: column-reverse;
