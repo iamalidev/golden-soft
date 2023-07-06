@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useReducer, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import * as Style from "./style";
 import HeaderTop from "./HeaderTop";
 import { Container } from "../Container/style";
-import { Link, useRoutes } from "react-router-dom";
 import HeaderLogo from "../../assets/img/svgIcons/headerLogo";
 import PhoneIcon from "../../assets/img/svgIcons/phoneIcon";
 import LikeIcon from "../../assets/img/svgIcons/likeIcon";
 import CartIcon from "../../assets/img/svgIcons/cartIcon";
 import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
 import MobileMenu from "./MobileMenu";
-import { Badge, IconButton } from "@mui/material";
+import { Badge } from "@mui/material";
 import CartModal from "../CartModal";
 import MainContext from "../../context/CartContext";
 import LikeModal from "../LikeModal";

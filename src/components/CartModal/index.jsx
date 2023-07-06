@@ -3,16 +3,11 @@ import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import * as Style from "./style";
 import CartModalTop from "./CartModalTop";
-import { ProductRateBox, RateBoxText } from "../ProductCard/style";
-import Rate from "../Rate";
-import { IconButton } from "@mui/material";
-import TrashIcon from "../../assets/img/svgIcons/trashIcon";
 import MainContext from "../../context/CartContext";
+import ItemsWrapper from "./ItemsWrapper";
 
 export default function CartModal({ cartModal, handleModal, data }) {
-  const { id, newPrice, quantity } = data;
-  const { removeFromCart, addOne, removeOne, cartItems } =
-    useContext(MainContext);
+  const { cartItems } = useContext(MainContext);
 
   const total = cartItems.reduce(
     (accumulator, currentValue) =>
@@ -40,46 +35,7 @@ export default function CartModal({ cartModal, handleModal, data }) {
           {data.length ? (
             <Style.CartModalContent>
               <Style.CartContentWapper>
-                {data.map((el) => (
-                  <Style.ItemsWrapper key={el.id}>
-                    <Style.ItemsInfo>
-                      <Style.ItemsImgWrapper>
-                        <img src={el?.img} alt="" />
-                      </Style.ItemsImgWrapper>
-                      <Style.InfoBox>
-                        <Style.InfoBoxTop>
-                          <Style.InfoTitle>{el.title}</Style.InfoTitle>
-                          <Style.RateBoxWrapper>
-                            <ProductRateBox>
-                              <Rate />
-                              <RateBoxText>(12) отзывов</RateBoxText>
-                            </ProductRateBox>
-                          </Style.RateBoxWrapper>
-                        </Style.InfoBoxTop>
-                        <Style.CounterWrapper>
-                          <Style.CounterBtn onClick={() => removeOne(id)}>
-                            -
-                          </Style.CounterBtn>
-                          <Style.CounterBox>{quantity}</Style.CounterBox>
-                          <Style.CounterBtn onClick={() => addOne(id)}>
-                            +
-                          </Style.CounterBtn>
-                        </Style.CounterWrapper>
-                      </Style.InfoBox>
-                    </Style.ItemsInfo>
-                    <Style.DelAndPrice>
-                      <Style.DeleteBox>
-                        <IconButton onClick={() => removeFromCart(el.id)}>
-                          <TrashIcon />
-                        </IconButton>
-                        <Style.DeleteText onClick={() => removeFromCart(el.id)}>
-                          Удалить
-                        </Style.DeleteText>
-                      </Style.DeleteBox>
-                      <Style.Price>{el.newPrice}₽</Style.Price>
-                    </Style.DelAndPrice>
-                  </Style.ItemsWrapper>
-                ))}
+                <ItemsWrapper product={data} />
               </Style.CartContentWapper>
               <Style.CartModalBottomWrapper>
                 <Style.CartModalBottomBtn>
@@ -87,9 +43,7 @@ export default function CartModal({ cartModal, handleModal, data }) {
                 </Style.CartModalBottomBtn>
                 <Style.TotalWrapper>
                   <Style.TotalText>Итого:</Style.TotalText>
-                  <Style.TotalPrice>
-                    {total.toLocaleString()} ₽
-                  </Style.TotalPrice>
+                  <Style.TotalPrice>{total} ₽</Style.TotalPrice>
                 </Style.TotalWrapper>
               </Style.CartModalBottomWrapper>
             </Style.CartModalContent>

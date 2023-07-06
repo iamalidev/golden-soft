@@ -1,17 +1,5 @@
 import React, { useMemo } from "react";
 import Modal from "@mui/material/Modal";
-import {
-  CartModalWindow,
-  EmptyText,
-  InfoBox,
-  InfoBoxTop,
-  InfoTitle,
-  ItemsImgWrapper,
-  ItemsInfo,
-  ItemsWrapper,
-  Price,
-  RateBoxWrapper,
-} from "../CartModal/style";
 import { ProductRateBox, RateBoxText } from "../ProductCard/style";
 import Rate from "../Rate";
 import TrashIcon from "../../assets/img/svgIcons/trashIcon";
@@ -24,6 +12,17 @@ import { LikeContentWrapper } from "./style";
 import AddCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveCartIcon from "@mui/icons-material/ShoppingCart";
 import * as Style from "./style";
+import {
+  InfoBox,
+  InfoBoxTop,
+  InfoTitle,
+  ItemsContent,
+  ItemsImgWrapper,
+  ItemsInfo,
+  Price,
+  RateBoxWrapper,
+} from "../CartModal/ItemsWrapper/style";
+import { CartModalWindow, EmptyText } from "../CartModal/style";
 
 export default function LikeModal({ likeModal, handleLike, data }) {
   const { addToCart, removeFromCart, removeFromLike, cartItems, likeItems } =
@@ -40,6 +39,7 @@ export default function LikeModal({ likeModal, handleLike, data }) {
       }
     }
   }, [cartItems]);
+
   console.log(select);
 
   return (
@@ -62,7 +62,7 @@ export default function LikeModal({ likeModal, handleLike, data }) {
           {data?.length ? (
             <LikeContentWrapper>
               {data.map((el) => (
-                <ItemsWrapper key={el.id}>
+                <ItemsContent>
                   <ItemsInfo>
                     <ItemsImgWrapper>
                       <img src={el.img} alt="" />
@@ -97,7 +97,7 @@ export default function LikeModal({ likeModal, handleLike, data }) {
                       {select ? <RemoveCartIcon /> : <AddCartIcon />}
                     </IconButton>
                   </Style.Buttons>
-                </ItemsWrapper>
+                </ItemsContent>
               ))}
             </LikeContentWrapper>
           ) : (
