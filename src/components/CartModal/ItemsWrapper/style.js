@@ -88,7 +88,7 @@ const DelAndPrice = styled.div`
   ${Flex.justFlex};
   flex-direction: column;
   align-items: end;
-  ${adaptiveValue("gap", 45, 15)};
+  ${adaptiveValue("gap", 45, 10)};
 `;
 
 const DeleteBox = styled.div`
@@ -113,6 +113,7 @@ const Price = styled.span`
   ${adaptiveValue("font-size", 16, 12)}
   ${adaptiveValue("line-height", 26, 20)}
   color: ${Colors.black};
+  word-spacing: 10px;
 `;
 
 export {

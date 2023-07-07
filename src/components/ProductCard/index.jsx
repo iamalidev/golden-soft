@@ -41,7 +41,9 @@ const ProductCard = ({ data, select, selectLike }) => {
         <Style.ProductCardTitle>{title}</Style.ProductCardTitle>
         <Style.PriceAndButtons>
           <Style.ProductPrice>
-            <Style.ProductNewPrice>{newPrice}₽</Style.ProductNewPrice>
+            <Style.ProductNewPrice>
+              {newPrice.toLocaleString()}₽
+            </Style.ProductNewPrice>
             <Style.ProductOldPrice>{oldPrice}</Style.ProductOldPrice>
           </Style.ProductPrice>
           <Style.BtnsWrapper>

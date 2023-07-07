@@ -43,7 +43,7 @@ export default function CartModal({ cartModal, handleModal, data }) {
                 </Style.CartModalBottomBtn>
                 <Style.TotalWrapper>
                   <Style.TotalText>Итого:</Style.TotalText>
-                  <Style.TotalPrice>{total} ₽</Style.TotalPrice>
+                  <Style.TotalPrice>{total.toLocaleString()}₽</Style.TotalPrice>
                 </Style.TotalWrapper>
               </Style.CartModalBottomWrapper>
             </Style.CartModalContent>

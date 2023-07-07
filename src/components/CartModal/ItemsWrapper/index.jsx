@@ -7,6 +7,7 @@ import MainContext from "../../../context/CartContext";
 import * as Style from "./style";
 
 const ItemsWrapper = ({ product }) => {
+  console.log(product);
   const { removeFromCart, addOne, removeOne } = useContext(MainContext);
 
   return (
@@ -47,7 +48,7 @@ const ItemsWrapper = ({ product }) => {
                 Удалить
               </Style.DeleteText>
             </Style.DeleteBox>
-            <Style.Price>{el.newPrice}₽</Style.Price>
+            <Style.Price>{el.newPrice * el.quantity}₽</Style.Price>
           </Style.DelAndPrice>
         </Style.ItemsContent>
       ))}
