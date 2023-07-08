@@ -7,7 +7,6 @@ import MainContext from "../../../context/CartContext";
 import * as Style from "./style";
 
 const ItemsWrapper = ({ product }) => {
-  console.log(product);
   const { removeFromCart, addOne, removeOne } = useContext(MainContext);
 
   return (

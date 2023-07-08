@@ -21,7 +21,6 @@ import {
 
 const LikeModalItems = ({ product, select }) => {
   const { id, img, title, newPrice, oldPrice } = product;
-  console.log(product);
   const { addToCart, removeFromCart, removeFromLike, cartItems, likeItems } =
     useContext(MainContext);
 

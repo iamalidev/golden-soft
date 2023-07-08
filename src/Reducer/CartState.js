@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import mainReducer from "./CartReducer";
 import {
   ADD_ONE,
@@ -12,8 +12,8 @@ import MainContext from "../context/CartContext";
 
 const CartState = ({ children }) => {
   const initialState = {
-    cartItems: [],
-    likeItems: [],
+    cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    likeItems: JSON.parse(localStorage.getItem("likeItems")) || [],
   };
 
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -31,6 +31,14 @@ const CartState = ({ children }) => {
   const addOne = (id) => dispatch({ type: ADD_ONE, payload: id });
 
   const removeOne = (id) => dispatch({ type: REMOVE_ONE, payload: id });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem("likeItems", JSON.stringify(state.likeItems));
+  }, [state.likeItems]);
 
   return (
     <MainContext.Provider
