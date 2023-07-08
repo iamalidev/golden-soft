@@ -13,11 +13,13 @@ const CatalogCardsWrapper = styled.div`
   ${adaptiveValue("margin-top", 64, 20)}
   ${adaptiveValue("margin-bottom", 80, 50)}
   display: flex;
-  justify-content: space-between;
-  ${Flex.center}
   column-gap: 30px;
   ${adaptiveValue("row-gap", 40, 16)}
   flex-wrap: wrap;
+
+  @media (max-width: 1285px) {
+    ${Flex.center}
+  }
 `;
 
 export { CatalogWrapper, CatalogCardsWrapper };

@@ -15,8 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:type" element={<CategoryPage />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/category" element={<CategoryPage />} />
+        <Route path="/catalog/:type" element={<Catalog />} />
         <Route path="/wholesale" element={<WholeSale />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/product" element={<Product />} />

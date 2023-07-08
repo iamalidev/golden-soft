@@ -10,14 +10,19 @@ import { PopularProductsTitle } from "../../components/PopularProducts/style";
 import ProductCard from "../../components/ProductCard";
 import * as Style from "./style";
 import MainContext from "../../context/CartContext";
+import { useParams } from "react-router-dom";
 
 const Catalog = () => {
+  const { type } = useParams();
   const [data, setData] = useState([]);
   const { cartItems } = useContext(MainContext);
   const { likeItems } = useContext(MainContext);
+  const categoryText = type.toLocaleLowerCase();
 
   async function getData() {
-    const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
+    const res = await axios.get(
+      `${process.env.REACT_APP_MAIN_URL}?category=${categoryText}`
+    );
 
     if ((res.status = 200)) {
       setData(res.data);
@@ -26,14 +31,14 @@ const Catalog = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [type]);
 
   return (
     <Style.CatalogWrapper>
       <Header />
       <Container>
         <BreadCrumbs disableText={"Каталог"} />
-        <PopularProductsTitle>Накладные электронные замки</PopularProductsTitle>
+        {/* <PopularProductsTitle>Накладные электронные замки</PopularProductsTitle> */}
         <Style.CatalogCardsWrapper>
           {data?.map((el) => (
             <ProductCard

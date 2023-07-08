@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Fonts, Colors, Flex } from "../../utils";
 import { adaptiveValue } from "../../utils/variable";
-import { Link } from "react-router-dom";
 
 const CategoryPageWrapper = styled.div`
   width: 100%;
