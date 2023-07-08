@@ -70,11 +70,10 @@ const Header = () => {
                     Категори
                   </Style.HeaderLink>
                   <Style.HeaderLink
-                    to="/catalog"
-                    className={`${pathname == "/catalog" ? "active" : ""}`}
+                    to="/contact"
+                    className={`${pathname == "/contact" ? "active" : ""}`}
                   >
-                    Каталог
-                    <CatalogArrow />
+                    Контакты
                   </Style.HeaderLink>
                   <Style.HeaderLink
                     to="/about-us"
