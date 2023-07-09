@@ -4,7 +4,12 @@ import { adaptiveValue } from "../../../utils/variable";
 
 const InfoTopWrapper = styled.div`
   width: 100%;
-  ${Flex.spaceBetween}
+  ${Flex.center};
+  ${adaptiveValue("gap", 30, 14)}
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Texts = styled.div`
@@ -46,6 +51,10 @@ const InfoText = styled.p`
 const CheckboxesWrapper = styled.div`
   ${Flex.justFlex};
   ${adaptiveValue("gap", 32, 10)};
+
+  @media (max-width: 625px) {
+    flex-direction: column;
+  }
 `;
 
 const CheckboxContent = styled.div`

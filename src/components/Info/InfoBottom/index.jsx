@@ -1,21 +1,16 @@
 import React from "react";
-import CheckboxIcon from "../../../assets/img/svgIcons/checkbox";
 import img from "../../../assets/img/info-bottom.png";
 import {
-  CheckboxContent,
-  CheckboxesWrapper,
-  CheckboxItems,
-  CheckboxText,
   ImgWrapper,
   InfoText,
   InfoTitle,
-  InfoTopWrapper,
   Texts,
 } from "../InfoTop/style";
+import * as Style from "./style";
 
 const InfoBottom = () => {
   return (
-    <InfoTopWrapper>
+    <Style.InfoBottomWrapper>
       <ImgWrapper>
         <img src={img} alt="" />
       </ImgWrapper>
@@ -33,7 +28,7 @@ const InfoBottom = () => {
           dictumst mauris sed facilisis.
         </InfoText>
       </Texts>
-    </InfoTopWrapper>
+    </Style.InfoBottomWrapper>
   );
 };
 
