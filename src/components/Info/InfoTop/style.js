@@ -25,7 +25,7 @@ const ImgWrapper = styled.div`
   width: 100%;
   ${adaptiveValue("max-height", 564, 300)};
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; 
 
   & > img {
     width: 100%;
