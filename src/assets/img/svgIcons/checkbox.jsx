@@ -1,5 +1,5 @@
 import * as React from "react";
-const CkeckboxIcon = (props) => (
+const CheckboxIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={17}
@@ -19,4 +19,4 @@ const CkeckboxIcon = (props) => (
     </g>
   </svg>
 );
-export default CkeckboxIcon;
+export default CheckboxIcon;

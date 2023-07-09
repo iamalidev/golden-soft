@@ -43,4 +43,37 @@ const InfoText = styled.p`
   color: ${Colors.gray};
 `;
 
-export { InfoTopWrapper, Texts, ImgWrapper, InfoTitle, InfoText };
+const CheckboxesWrapper = styled.div`
+  ${Flex.justFlex};
+  ${adaptiveValue("gap", 32, 10)};
+`;
+
+const CheckboxContent = styled.div`
+  ${Flex.justFlex};
+  flex-direction: column;
+  ${adaptiveValue("gap", 16, 10)}
+`;
+
+const CheckboxItems = styled.div`
+  ${Flex.alignCenter};
+  ${adaptiveValue("gap", 12, 7)}
+`;
+
+const CheckboxText = styled.span`
+  font-family: ${Fonts.SFPRegular};
+  ${adaptiveValue("font-size", 20, 14)};
+  line-height: 24px;
+  color: ${Colors.black};
+`;
+
+export {
+  InfoTopWrapper,
+  Texts,
+  ImgWrapper,
+  InfoTitle,
+  InfoText,
+  CheckboxesWrapper,
+  CheckboxContent,
+  CheckboxItems,
+  CheckboxText,
+};

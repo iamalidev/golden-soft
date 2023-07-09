@@ -7,6 +7,7 @@ const InfoWrapper = styled.div`
   ${Flex.justFlex}
   flex-direction: column;
   ${adaptiveValue("gap", 82, 35)}
+  ${adaptiveValue("margin-bottom", 100, 35)}
 `;
 
 export { InfoWrapper };

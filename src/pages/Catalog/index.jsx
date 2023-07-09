@@ -6,11 +6,11 @@ import { Container } from "../../components/Container/style";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import PopularProducts from "../../components/PopularProducts";
-import { PopularProductsTitle } from "../../components/PopularProducts/style";
 import ProductCard from "../../components/ProductCard";
 import * as Style from "./style";
 import MainContext from "../../context/CartContext";
 import { useParams } from "react-router-dom";
+import Info from "../../components/Info";
 
 const Catalog = () => {
   const { type } = useParams();
@@ -38,7 +38,6 @@ const Catalog = () => {
       <Header />
       <Container>
         <BreadCrumbs disableText={"Каталог"} />
-        {/* <PopularProductsTitle>Накладные электронные замки</PopularProductsTitle> */}
         <Style.CatalogCardsWrapper>
           {data?.map((el) => (
             <ProductCard
@@ -51,6 +50,7 @@ const Catalog = () => {
         </Style.CatalogCardsWrapper>
       </Container>
       <PopularProducts />
+      <Info />
       <Contact />
       <Footer />
     </Style.CatalogWrapper>
