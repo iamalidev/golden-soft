@@ -17,9 +17,27 @@ const Footer = () => {
               <FooterLogo />
             </Style.FooterLogoWrapper>
             <Style.FooterSocialMedia>
-              <VkIcon fa fa-rocket />
-              <TwitterIcon />
-              <FacebookIcon />
+              <a
+                href="https://vk.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <VkIcon />
+              </a>
+              <a
+                href="http://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <TwitterIcon />
+              </a>
+              <a
+                href="http://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookIcon />
+              </a>
             </Style.FooterSocialMedia>
           </Style.FooterSocial>
           <Style.FooterLinksWrapper>

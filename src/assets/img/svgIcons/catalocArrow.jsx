@@ -6,6 +6,7 @@ const CatalogArrow = (props) => (
     height={7}
     viewBox="0 0 12 7"
     fill="none"
+    transform="rotate(-180deg)"
     {...props}
   >
     <path

@@ -19,6 +19,11 @@ const Header = () => {
   const { cartItems, likeItems } = useContext(MainContext);
   const [cartModal, setCartModal] = useState(false);
   const [likeModal, setLikeModal] = useState(false);
+  const [rotate, setRotate] = useState(false);
+
+  const click = () => {
+    setRotate(!rotate);
+  };
 
   const toggle = () => {
     setMobileMenu(!mobileMenu);
@@ -68,6 +73,7 @@ const Header = () => {
                     className={`${pathname == "/category" ? "active" : ""}`}
                   >
                     Категори
+                    <CatalogArrow click={click} />
                   </Style.HeaderLink>
                   <Style.HeaderLink
                     to="/contact"
