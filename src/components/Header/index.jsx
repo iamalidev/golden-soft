@@ -6,12 +6,14 @@ import HeaderLogo from "../../assets/img/svgIcons/headerLogo";
 import PhoneIcon from "../../assets/img/svgIcons/phoneIcon";
 import LikeIcon from "../../assets/img/svgIcons/likeIcon";
 import CartIcon from "../../assets/img/svgIcons/cartIcon";
-import CatalogArrow from "../../assets/img/svgIcons/catalocArrow";
+import CatalogArrow from "../../assets/img/svgIcons/catalogArrow";
 import MobileMenu from "./MobileMenu";
 import { Badge } from "@mui/material";
 import CartModal from "../CartModal";
 import MainContext from "../../context/CartContext";
 import LikeModal from "../LikeModal";
+import CategoryModal from "./CategoryModal";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const pathname = window.location.pathname;
@@ -19,6 +21,7 @@ const Header = () => {
   const { cartItems, likeItems } = useContext(MainContext);
   const [cartModal, setCartModal] = useState(false);
   const [likeModal, setLikeModal] = useState(false);
+  const [categoryModal, setCategoryModal] = useState(false);
   const [rotate, setRotate] = useState(false);
 
   const click = () => {
@@ -37,6 +40,10 @@ const Header = () => {
     setLikeModal(!likeModal);
   };
 
+  const handleCategory = () => {
+    setCategoryModal(!categoryModal);
+  };
+
   useEffect(() => {
     if (mobileMenu) {
       document.body.style.overflow = "hidden";
@@ -52,6 +59,10 @@ const Header = () => {
         <Style.HeaderNav>
           <Container>
             <Style.HeaderNavContent>
+              <CategoryModal
+                categoryModal={categoryModal}
+                handleCategory={handleCategory}
+              />
               <Style.HeaderLinksWrapper>
                 <Style.BurgerMenu onClick={() => toggle()}>
                   <Style.BurgerTopItem open={mobileMenu} />
@@ -62,31 +73,33 @@ const Header = () => {
                   <HeaderLogo />
                 </Style.HeaderLogo>
                 <Style.HeaderNavLinks>
-                  <Style.HeaderLink
-                    to="/"
-                    className={`${pathname == "/" ? "active" : ""}`}
-                  >
-                    Главная
-                  </Style.HeaderLink>
-                  <Style.HeaderLink
-                    to="/category"
-                    className={`${pathname == "/category" ? "active" : ""}`}
-                  >
-                    Категори
-                    <CatalogArrow click={click} />
-                  </Style.HeaderLink>
-                  <Style.HeaderLink
-                    to="/contact"
-                    className={`${pathname == "/contact" ? "active" : ""}`}
-                  >
-                    Контакты
-                  </Style.HeaderLink>
-                  <Style.HeaderLink
-                    to="/about-us"
-                    className={`${pathname == "/about-us" ? "active" : ""}`}
-                  >
-                    О нас
-                  </Style.HeaderLink>
+                  <Link to="/">
+                    <Style.HeaderLink
+                      className={`${pathname == "/" ? "active" : ""}`}
+                    >
+                      Главная
+                    </Style.HeaderLink>
+                  </Link>
+                  <Link>
+                    <Style.HeaderLink onClick={handleCategory}>
+                      Категори
+                      <CatalogArrow active={categoryModal} />
+                    </Style.HeaderLink>
+                  </Link>
+                  <Link to="/contact">
+                    <Style.HeaderLink
+                      className={`${pathname == "/contact" ? "active" : ""}`}
+                    >
+                      Контакты
+                    </Style.HeaderLink>
+                  </Link>
+                  <Link to="/about-us">
+                    <Style.HeaderLink
+                      className={`${pathname == "/about-us" ? "active" : ""}`}
+                    >
+                      О нас
+                    </Style.HeaderLink>
+                  </Link>
                 </Style.HeaderNavLinks>
               </Style.HeaderLinksWrapper>
               <Style.UserActions>
@@ -115,6 +128,7 @@ const Header = () => {
             handleModal={handleModal}
             data={cartItems}
           />
+
           <MobileMenu open={mobileMenu}></MobileMenu>
         </Style.HeaderNav>
       </Style.HeaderWrapper>

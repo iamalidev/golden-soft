@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 600;
     }
 
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -105,9 +105,13 @@ export const GlobalStyles = createGlobalStyle`
 
     .swiper-pagination-bullet-active.swiper-pagination-bullet::after {
         opacity: 1;
-    }    
+    }
 
     .swiper-button-disabled svg path {
         stroke: #a4a4a4 !important;
+    }
+
+    .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+        background-color: transparent !important;
     }
 `;

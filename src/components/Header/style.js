@@ -35,6 +35,7 @@ const HeaderLogo = styled(Link)`
 `;
 
 const HeaderNavContent = styled.div`
+  position: relative;
   ${Flex.spaceBetween}
 `;
 
@@ -52,24 +53,24 @@ const HeaderNavLinks = styled.div`
   }
 `;
 
-const HeaderLink = styled(Link)`
+const HeaderLink = styled.button`
   font-family: ${Fonts.SFPLight};
   ${adaptiveValue("font-size", 20, 13)}
   line-height: 24px;
   color: ${Colors.black};
   padding-inline: 10px;
   ${Flex.center}
-  gap: 8px;
+  gap: 10px;
   position: relative;
+  background: none;
+  cursor: pointer;
 
   &::after {
     content: "";
     position: absolute;
-    /* left: 0; */
     width: 0;
     height: 81px;
     z-index: -2;
-    /* background-color: ${Colors.lightBlue}; */
     border-bottom: 1px solid ${Colors.blue};
     transition: 0.2s ease-in-out;
   }
