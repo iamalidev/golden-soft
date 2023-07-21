@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import CategoryPage from "./pages/CategoryPage";
 import ContactPage from "./pages/ContactPage";
+import ProductView from "./pages/ProductView";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<CategoryPage />} />
         <Route path="/catalog/:type" element={<Catalog />} />
+        <Route path="/product/detail/:id" element={<ProductView />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="*" element={<PageNotFound />} />

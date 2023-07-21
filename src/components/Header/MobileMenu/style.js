@@ -1,23 +1,35 @@
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../../utils";
 import { Link } from "react-router-dom";
+
 const MobileMenuWrapper = styled.div`
   position: fixed;
-  top: 118px;
+  top: 105px;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  z-index: -10;
   ${Flex.flexBetween}
   flex-direction: column;
-  min-height: 706px;
-  padding: 40px 16px 110px 16px;
-  padding: 40px 16px 120px 16px;
+  padding: 24px 16px;
   background-color: ${Colors.white};
   border-right: 1px solid #cacdd5;
   transition: 0.4s;
   transform: ${({ open }) =>
-    open == true ? "translateX(0)" : "translateX(-100%)"};
+    open === true ? "translateX(0%)" : "translateX(-100%)"};
+  display: none;
+
+  @media (max-width: 800px) {
+    ${Flex.justFlex}
+  }
+
+  @media (max-width: 768px) {
+    top: 100px;
+  }
+
+  @media (max-width: 486px) {
+    top: 116px;
+  }
 `;
 const MobileMenuLinks = styled.div`
   width: 100%;

@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../utils";
 
@@ -7,9 +7,13 @@ const ProductCardWrapper = styled.div`
   position: relative;
   ${Flex.justFlex}
   flex-direction: column;
+
+  @media (max-width: 576px) {
+    margin-left: 7px;
+  }
 `;
 
-const ProductCardTop = styled.div`
+const ProductCardTop = styled(Link)`
   padding-left: 4px !important;
   width: 100%;
   height: 320px;

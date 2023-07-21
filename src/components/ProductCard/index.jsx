@@ -25,7 +25,7 @@ const ProductCard = ({ data, select, selectLike }) => {
     useContext(MainContext);
   return (
     <Style.ProductCardWrapper>
-      <Style.ProductCardTop>
+      <Style.ProductCardTop to={`/product/detail/${id}`}>
         <Style.InCashBox>
           {inCash ? <InCashTrue /> : <InCashFalse />}
         </Style.InCashBox>

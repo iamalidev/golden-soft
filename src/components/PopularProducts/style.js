@@ -8,6 +8,7 @@ import { SwiperNavigation } from "../Banner/style";
 const PopularProductsWrapper = styled.div`
   width: 100%;
   ${adaptiveValue("margin-bottom", 96, 36)};
+  /* background: red; */
 `;
 
 const PopularProductsTop = styled.div`

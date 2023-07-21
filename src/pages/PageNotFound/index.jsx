@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "../../components/Container/style";
 import img from "../../assets/img/404.png";
 import * as Style from "./style";
-import { CategoryPageBtn } from "../CategoryPage/style";
 
 const PageNotFound = () => {
   return (

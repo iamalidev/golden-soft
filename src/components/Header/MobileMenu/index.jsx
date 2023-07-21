@@ -15,11 +15,11 @@ const MobileMenu = ({ open }) => {
     <Style.MobileMenuWrapper open={open}>
       <Style.MobileMenuLinks>
         <Style.MobileMenuLink to="/">Главная</Style.MobileMenuLink>
-        <Style.MobileMenuLink to="/" onClick={() => click()}>
-          Каталог <MobileCatalogArrow focus={link} />
+        <Style.MobileMenuLink to="/category" onClick={() => click()}>
+          Категории <MobileCatalogArrow focus={link} />
         </Style.MobileMenuLink>
-        <Style.MobileMenuLink to="/">Оптовая продажа</Style.MobileMenuLink>
-        <Style.MobileMenuLink to="/">О нас</Style.MobileMenuLink>
+        <Style.MobileMenuLink to="/contact">Контакты</Style.MobileMenuLink>
+        <Style.MobileMenuLink to="/about-us">О нас</Style.MobileMenuLink>
       </Style.MobileMenuLinks>
       <Style.MobileMenuActions>
         <Style.MobileCallWrapper href="tel:+998886000860">
