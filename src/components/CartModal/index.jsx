@@ -48,7 +48,7 @@ export default function CartModal({ cartModal, handleModal, data }) {
               </Style.CartModalBottomWrapper>
             </Style.CartModalContent>
           ) : (
-            <Style.EmptyText>Пока пусто : (</Style.EmptyText>
+            <Style.EmptyText>Пока пусто</Style.EmptyText>
           )}
         </Style.CartModalWindow>
       </Modal>

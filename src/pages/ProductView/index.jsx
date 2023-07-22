@@ -1,7 +1,6 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import Contact from "../../components/Contact";
 import { Container } from "../../components/Container/style";
@@ -9,7 +8,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Info from "../../components/Info";
 import PopularProducts from "../../components/PopularProducts";
-import { ImgWrapper, ProductViewWrapper } from "./style";
+import * as Style from "./style";
 
 const ProductView = () => {
   const { id } = useParams();
@@ -35,11 +34,12 @@ const ProductView = () => {
           additionalPageName={"Категории"}
           additionalHrefText={"/category"}
         />
-        <ProductViewWrapper>
-          <ImgWrapper>
+        <Style.ProductViewWrapper>
+          <Style.ImgWrapper>
             <img src={product.img} alt="" />
-          </ImgWrapper>
-        </ProductViewWrapper>
+          </Style.ImgWrapper>
+          <Style.ProductInfo></Style.ProductInfo>
+        </Style.ProductViewWrapper>
       </Container>
       <PopularProducts />
       <Info />

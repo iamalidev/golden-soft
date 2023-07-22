@@ -22,4 +22,8 @@ const ImgWrapper = styled.div`
   }
 `;
 
-export { ProductViewWrapper, ImgWrapper };
+const ProductInfo = styled.div`
+  width: 100%;
+`;
+
+export { ProductViewWrapper, ImgWrapper, ProductInfo };

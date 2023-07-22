@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as Style from "./style";
-import PhoneIcon from "../../../assets/img/svgIcons/phoneIcon";
 import MobilePhoneIcon from "../../../assets/img/svgIcons/mobilePhoneIcon";
 import MobileCatalogArrow from "../../../assets/img/svgIcons/mobileCatalogArrow";
 

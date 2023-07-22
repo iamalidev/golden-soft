@@ -37,7 +37,7 @@ export default function LikeModal({ likeModal, handleLike, data }) {
               ))}
             </Style.ItemsWrapper>
           ) : (
-            <EmptyText>Пока пусто : (</EmptyText>
+            <EmptyText>Пока пусто</EmptyText>
           )}
         </CartModalWindow>
       </Modal>

@@ -1,19 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
-import * as Style from "./style";
-import HeaderTop from "./HeaderTop";
+import { Link } from "react-router-dom";
+import { Badge } from "@mui/material";
+import MainContext from "../../context/CartContext";
 import { Container } from "../Container/style";
+import CartModal from "../CartModal";
+import LikeModal from "../LikeModal";
+import HeaderTop from "./HeaderTop";
+import MobileMenu from "./MobileMenu";
+import CategoryModal from "./CategoryModal";
+import * as Style from "./style";
+
+import CatalogArrow from "../../assets/img/svgIcons/catalogArrow";
 import HeaderLogo from "../../assets/img/svgIcons/headerLogo";
 import PhoneIcon from "../../assets/img/svgIcons/phoneIcon";
-import LikeIcon from "../../assets/img/svgIcons/likeIcon";
 import CartIcon from "../../assets/img/svgIcons/cartIcon";
-import CatalogArrow from "../../assets/img/svgIcons/catalogArrow";
-import MobileMenu from "./MobileMenu";
-import { Badge } from "@mui/material";
-import CartModal from "../CartModal";
-import MainContext from "../../context/CartContext";
-import LikeModal from "../LikeModal";
-import CategoryModal from "./CategoryModal";
-import { Link } from "react-router-dom";
+import LikeIcon from "../../assets/img/svgIcons/likeIcon";
 
 const Header = () => {
   const pathname = window.location.pathname;
