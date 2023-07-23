@@ -4,7 +4,8 @@ import { adaptiveValue } from "../../utils/variable";
 
 const ProductViewWrapper = styled.div`
   width: 100%;
-  ${Flex.flexBetween}
+  ${Flex.justFlex};
+  ${adaptiveValue("gap", 30, 15)};
   ${adaptiveValue("margin-bottom", 80, 35)}
 `;
 
@@ -26,4 +27,9 @@ const ProductInfo = styled.div`
   width: 100%;
 `;
 
-export { ProductViewWrapper, ImgWrapper, ProductInfo };
+const ProductRateLine = styled.div`
+  ${Flex.alignCenter};
+  gap: 12px;
+`;
+
+export { ProductViewWrapper, ImgWrapper, ProductInfo, ProductRateLine };

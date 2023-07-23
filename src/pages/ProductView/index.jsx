@@ -9,6 +9,8 @@ import Header from "../../components/Header";
 import Info from "../../components/Info";
 import PopularProducts from "../../components/PopularProducts";
 import * as Style from "./style";
+import { ProductRateBox, RateBoxText } from "../../components/ProductCard/style";
+import Rate from "../../components/Rate";
 
 const ProductView = () => {
   const { id } = useParams();
@@ -38,7 +40,12 @@ const ProductView = () => {
           <Style.ImgWrapper>
             <img src={product.img} alt="" />
           </Style.ImgWrapper>
-          <Style.ProductInfo></Style.ProductInfo>
+          <Style.ProductInfo>
+            <Style.ProductRateLine>
+              <Rate />
+              <RateBoxText>(12) отзывов</RateBoxText>
+            </Style.ProductRateLine>
+          </Style.ProductInfo>
         </Style.ProductViewWrapper>
       </Container>
       <PopularProducts />
