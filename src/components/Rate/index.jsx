@@ -38,7 +38,7 @@ export default function Rate() {
         onChangeActive={(event, newHover) => {
           setHover(newHover);
         }}
-        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+        emptyIcon={<StarIcon style={{ opacity: 0.55 }}  />}
       />
     </Box>
   );
