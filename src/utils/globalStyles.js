@@ -115,13 +115,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: transparent !important;
     }
 
-    /* .css-jm3i9k {
-        width: 0;
-        background: red;
-    } */
-
     .MuiPaper-elevation {
-        /* border: 1px solid red; */
         box-shadow: none !important;
     }
 

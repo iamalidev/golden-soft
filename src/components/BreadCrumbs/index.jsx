@@ -9,12 +9,12 @@ const BreadCrumbs = ({
 }) => {
   return (
     <Style.BreadCrumbsWrapper aria-label="breadcrumb">
-      <Link underline="hover" color="inherit" to="/">
+      <Link to="/">
         <Style.OldLink>Главная</Style.OldLink>
       </Link>
       {additionalPageName ? (
-        <Link underline="hover" color="inherit" to={additionalHrefText}>
-          {additionalPageName}
+        <Link to={additionalHrefText}>
+          <Style.OldLink>{additionalPageName}</Style.OldLink>
         </Link>
       ) : null}
       <Style.NewLink>{disableText}</Style.NewLink>

@@ -16,8 +16,14 @@ import {
   CheckboxText,
 } from "../../components/Info/InfoTop/style";
 import CheckboxIcon from "../../assets/img/svgIcons/checkbox";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  IconButton,
+} from "@mui/material";
 import AccordionArow from "../../assets/img/svgIcons/AccordionArrow";
+import AddLikeIcon from "@mui/icons-material/FavoriteBorder";
 
 const ProductView = () => {
   const { id } = useParams();
@@ -39,9 +45,9 @@ const ProductView = () => {
       <Header />
       <Container>
         <BreadCrumbs
-          disableText={product?.title}
           additionalPageName={"Категории"}
           additionalHrefText={"/category"}
+          disableText={product.title}
         />
         <Style.ProductViewWrapper>
           <Style.ImgWrapper>
@@ -71,6 +77,12 @@ const ProductView = () => {
             </Style.PricesWrapper>
             <Style.InfoActions>
               <Style.BuyButton>Купить</Style.BuyButton>
+              <Style.LikeBox>
+                <IconButton color="error" aria-label="add to shopping cart">
+                  <AddLikeIcon />
+                </IconButton>
+                <Style.LikeText>В избранное</Style.LikeText>
+              </Style.LikeBox>
             </Style.InfoActions>
             <Style.AccordionWrapper>
               <Accordion>

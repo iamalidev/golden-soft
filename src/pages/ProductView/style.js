@@ -7,6 +7,11 @@ const ProductViewWrapper = styled.div`
   ${Flex.justFlex};
   ${adaptiveValue("gap", 30, 15)};
   ${adaptiveValue("margin-bottom", 80, 35)}
+
+  @media (max-width: 950px) {
+    ${Flex.center};
+    flex-direction: column;
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -25,6 +30,10 @@ const ImgWrapper = styled.div`
 
 const ProductInfo = styled.div`
   width: 597px;
+
+  @media (max-width: 950px) {
+    width: 100%;
+  }
 `;
 
 const ProductRateLine = styled.div`
@@ -60,6 +69,10 @@ const ChecboxesWrapper = styled.div`
   ${Flex.justFlex};
   gap: 12px;
   margin-top: 10px;
+
+  @media (max-width: 370px) {
+    flex-direction: column;
+  }
 `;
 
 const AccordionWrapper = styled.div`
@@ -127,6 +140,22 @@ const BuyButton = styled.button`
   }
 `;
 
+const LikeBox = styled.div`
+  ${Flex.alignCenter};
+  gap: 3px;
+`;
+
+const LikeText = styled.span`
+  font-family: ${Fonts.SFPRegular};
+  font-size: 14px;
+  line-height: 24px;
+  color: ${Colors.gray};
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
 export {
   ProductViewWrapper,
   ImgWrapper,
@@ -144,4 +173,6 @@ export {
   OldPrice,
   InfoActions,
   BuyButton,
+  LikeBox,
+  LikeText,
 };
