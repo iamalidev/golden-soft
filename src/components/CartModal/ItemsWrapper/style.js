@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../../utils";
 import { adaptiveValue } from "../../../utils/variable";
@@ -19,7 +20,7 @@ const ItemsInfo = styled.div`
   gap: 12px;
 `;
 
-const ItemsImgWrapper = styled.div`
+const ItemsImgWrapper = styled(Link)`
   ${adaptiveValue("width", 136, 65)};
   ${adaptiveValue("height", 120, 63)};
   background-color: #f7f7f7;

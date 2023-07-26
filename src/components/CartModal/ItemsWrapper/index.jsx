@@ -14,7 +14,7 @@ const ItemsWrapper = ({ product }) => {
       {product.map((el) => (
         <Style.ItemsContent>
           <Style.ItemsInfo>
-            <Style.ItemsImgWrapper>
+            <Style.ItemsImgWrapper to={`/product/detail/${product.id}`}>
               <img src={el.img} alt="" />
             </Style.ItemsImgWrapper>
             <Style.InfoBox>
