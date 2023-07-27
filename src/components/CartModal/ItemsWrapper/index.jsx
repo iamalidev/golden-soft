@@ -7,6 +7,7 @@ import MainContext from "../../../context/CartContext";
 import * as Style from "./style";
 
 const ItemsWrapper = ({ product }) => {
+  const { id } = product;
   const { removeFromCart, addOne, removeOne } = useContext(MainContext);
 
   return (
@@ -14,7 +15,7 @@ const ItemsWrapper = ({ product }) => {
       {product.map((el) => (
         <Style.ItemsContent>
           <Style.ItemsInfo>
-            <Style.ItemsImgWrapper to={`/product/detail/${product.id}`}>
+            <Style.ItemsImgWrapper to={`/product/detail/${el.id}`}>
               <img src={el.img} alt="" />
             </Style.ItemsImgWrapper>
             <Style.InfoBox>

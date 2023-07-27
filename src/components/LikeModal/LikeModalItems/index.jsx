@@ -28,7 +28,7 @@ const LikeModalItems = ({ product, select }) => {
     <Style.LikeContentWrapper>
       <ItemsContent>
         <ItemsInfo>
-          <ItemsImgWrapper>
+          <ItemsImgWrapper to={`/product/detail/${id}`}>
             <img src={img} alt="" />
           </ItemsImgWrapper>
           <InfoBox>

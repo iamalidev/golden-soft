@@ -6,9 +6,22 @@ import PageNotFound from "./pages/PageNotFound";
 import CategoryPage from "./pages/CategoryPage";
 import ContactPage from "./pages/ContactPage";
 import ProductView from "./pages/ProductView";
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 
 function App() {
-  return (
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoader(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  });
+
+  return loader ? (
+    <Loader />
+  ) : (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />

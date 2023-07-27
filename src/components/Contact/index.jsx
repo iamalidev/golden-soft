@@ -3,6 +3,7 @@ import { Formik, ErrorMessage } from "formik";
 import { Container } from "../Container/style";
 import * as Style from "./style";
 import * as Yup from "yup";
+import ErrorForm from "../ErrorForm";
 
 const Contact = () => {
   const contactInitialValues = {
@@ -43,26 +44,18 @@ const Contact = () => {
                     name="name"
                     onChange={formik.handleChange}
                     type="text"
+                    className={`${formik.errors.name && "error"}`}
                     placeholder="Ваше имя"
                   />
-                  <ErrorMessage
-                    render={(el) => {
-                      return <div className="error_message">{el}</div>;
-                    }}
-                    name="name"
-                  />
+                  <ErrorForm name="name" />
                   <Style.ContactFormInput
                     name="email"
                     onChange={formik.handleChange}
                     type="email"
+                    className={`${formik.errors.email && "error"}`}
                     placeholder="Ваш Email"
                   />
-                  <ErrorMessage
-                    render={(el) => {
-                      return <div className="error_message">{el}</div>;
-                    }}
-                    name="email"
-                  />
+                  <ErrorForm name="email" />
                   <Style.ContactFormSubmit type="submit">
                     Отправить
                   </Style.ContactFormSubmit>
