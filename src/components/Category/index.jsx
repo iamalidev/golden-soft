@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Container } from "../Container/style";
+import * as Style from "./style";
+
 import firstImg from "../../assets/img/category_img1.png";
 import secondImg from "../../assets/img/category_img2.png";
 import thirdImg from "../../assets/img/category_img3.png";
 import fourthImg from "../../assets/img/category_img4.png";
-import { Link } from "react-router-dom";
-import { Container } from "../Container/style";
-import * as Style from "./style";
 
 const Category = () => {
   return (

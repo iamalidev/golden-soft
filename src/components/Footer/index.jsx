@@ -44,22 +44,26 @@ const Footer = () => {
             <Style.FooterLinks>
               <Style.FooterLinksTitle>Навигация</Style.FooterLinksTitle>
               <Style.FooterLinksContent>
-                <Style.FooterLinksLink href="#">Главная</Style.FooterLinksLink>
-                <Style.FooterLinksLink href="#">Каталог</Style.FooterLinksLink>
-                <Style.FooterLinksLink href="#">
-                  Оптовая продажа
+                <Style.FooterLinksLink to="/">Главная</Style.FooterLinksLink>
+                <Style.FooterLinksLink to="/category">
+                  Категории
                 </Style.FooterLinksLink>
-                <Style.FooterLinksLink href="#">О нас</Style.FooterLinksLink>
+                <Style.FooterLinksLink to="/contact">
+                  Контакты
+                </Style.FooterLinksLink>
+                <Style.FooterLinksLink to="/about-us">
+                  О нас
+                </Style.FooterLinksLink>
               </Style.FooterLinksContent>
             </Style.FooterLinks>
             <Style.FooterLinks>
               <Style.FooterLinksTitle>Наши контакты</Style.FooterLinksTitle>
               <Style.FooterLinksContent>
                 <Style.FooterLinksLink href="#">Телефоны</Style.FooterLinksLink>
-                <Style.FooterLinksLink href="#">
+                <Style.FooterLinksLink href="tel:+998886000860">
                   +7 (988) 565 00 38
                 </Style.FooterLinksLink>
-                <Style.FooterLinksLink href="#">
+                <Style.FooterLinksLink>
                   +375 33 662 82 56
                 </Style.FooterLinksLink>
                 <Style.FooterLinksLink href="#">Email</Style.FooterLinksLink>

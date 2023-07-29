@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Colors, Flex, Fonts } from "../../utils";
 import { adaptiveValue } from "../../utils/variable";
@@ -78,7 +79,7 @@ const FooterLinksContent = styled.div`
   gap: 16px;
 `;
 
-const FooterLinksLink = styled.a`
+const FooterLinksLink = styled(Link)`
   font-family: ${Fonts.SFPLight};
   font-size: 16px;
   line-height: 26px;
