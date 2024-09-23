@@ -20,7 +20,7 @@ import {
 } from "../../CartModal/ItemsWrapper/style";
 
 const LikeModalItems = ({ product, select }) => {
-  const { id, img, title, newPrice, oldPrice } = product;
+  const { id, img, cardTxt, nowPrice, oldPrice } = product;
   const { addToCart, removeFromCart, removeFromLike, cartItems, likeItems } =
     useContext(MainContext);
 
@@ -33,7 +33,7 @@ const LikeModalItems = ({ product, select }) => {
           </ItemsImgWrapper>
           <InfoBox>
             <InfoBoxTop>
-              <InfoTitle>{title}</InfoTitle>
+              <InfoTitle>{cardTxt}</InfoTitle>
               <RateBoxWrapper>
                 <ProductRateBox>
                   <Rate />
@@ -41,7 +41,7 @@ const LikeModalItems = ({ product, select }) => {
                 </ProductRateBox>
               </RateBoxWrapper>
               <Style.PriceBox>
-                <Price>{newPrice}₽</Price>
+                <Price>{nowPrice}₽</Price>
                 <Style.OldPrice>{oldPrice}</Style.OldPrice>
               </Style.PriceBox>
             </InfoBoxTop>

@@ -48,7 +48,7 @@ const ItemsWrapper = ({ product }) => {
                 Удалить
               </Style.DeleteText>
             </Style.DeleteBox>
-            <Style.Price>{el.newPrice * el.quantity}₽</Style.Price>
+            <Style.Price>{el.nowPrice * el.quantity}₽</Style.Price>
           </Style.DelAndPrice>
         </Style.ItemsContent>
       ))}

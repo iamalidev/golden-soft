@@ -11,7 +11,7 @@ export default function CartModal({ cartModal, handleModal, data }) {
 
   const total = cartItems.reduce(
     (accumulator, currentValue) =>
-      accumulator + currentValue.newPrice * currentValue.quantity,
+      accumulator + currentValue.nowPrice * currentValue.quantity,
     0
   );
 

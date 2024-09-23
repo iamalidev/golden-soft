@@ -66,7 +66,7 @@ const HeaderBanner = () => {
                       <Style.PriceTextsWrapper>
                         <Style.PriceText>{el.badge}</Style.PriceText>
                         <Style.Prices>
-                          <Style.NewPrice>{el.newPrice}</Style.NewPrice>
+                          <Style.NewPrice>{el.nowPrice}</Style.NewPrice>
                           <Style.OldPrice>{el.oldPrice}</Style.OldPrice>
                         </Style.Prices>
                       </Style.PriceTextsWrapper>

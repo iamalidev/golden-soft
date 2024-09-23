@@ -30,13 +30,18 @@ const ProductView = () => {
   const [product, setProduct] = useState([]);
 
   const getData = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}/${id}`);
-    if (res.status == 200) {
-      setProduct(res.data);
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}/${id}`);
+      if (res.status === 200) {
+        setProduct(res.data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
     }
   };
 
   useEffect(() => {
+    console.log("Requesting URL:", `${process.env.REACT_APP_MAIN_URL}/${id}`);
     getData();
   }, [id]);
 
@@ -47,7 +52,7 @@ const ProductView = () => {
         <BreadCrumbs
           additionalPageName={"Категории"}
           additionalHrefText={"/category"}
-          disableText={product.title}
+          disableText={product.cardTxt}
         />
         <Style.ProductViewWrapper>
           <Style.ImgWrapper>
@@ -59,7 +64,7 @@ const ProductView = () => {
               <Rate />
               <RateBoxText>(12) отзывов</RateBoxText>
             </Style.ProductRateLine>
-            <Style.ProductName>{product.title}</Style.ProductName>
+            <Style.ProductName>{product.cardTxt}</Style.ProductName>
             <Style.SubTitle>Подходит для установки на:</Style.SubTitle>
             <Style.ChecboxesWrapper>
               <CheckboxItems>
@@ -72,7 +77,7 @@ const ProductView = () => {
               </CheckboxItems>
             </Style.ChecboxesWrapper>
             <Style.PricesWrapper>
-              <Style.NewPrice>{product.newPrice}</Style.NewPrice>
+              <Style.NewPrice>{product.nowPrice}</Style.NewPrice>
               <Style.OldPrice>{product.oldPrice}</Style.OldPrice>
             </Style.PricesWrapper>
             <Style.InfoActions>

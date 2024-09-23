@@ -11,7 +11,7 @@ import RemoveLikeIcon from "@mui/icons-material/Favorite";
 import MainContext from "../../context/CartContext";
 
 const ProductCard = ({ data, select, selectLike }) => {
-  const { inCash, img, title, newPrice, oldPrice, id } = data;
+  const { cash, img, cardTxt, nowPrice, oldPrice, id } = data;
 
   const cartToggle = () => {
     return select ? removeFromCart(id) : addToCart(data);
@@ -27,7 +27,7 @@ const ProductCard = ({ data, select, selectLike }) => {
     <Style.ProductCardWrapper>
       <Style.ProductCardTop to={`/product/detail/${id}`}>
         <Style.InCashBox>
-          {inCash ? <InCashTrue /> : <InCashFalse />}
+          {cash ? <InCashTrue /> : <InCashFalse />}
         </Style.InCashBox>
         <Style.CardImgWrapper>
           <img src={img} alt="" />
@@ -38,11 +38,11 @@ const ProductCard = ({ data, select, selectLike }) => {
           <Rate />
           <Style.RateBoxText>(12) отзывов</Style.RateBoxText>
         </Style.ProductRateBox>
-        <Style.ProductCardTitle>{title}</Style.ProductCardTitle>
+        <Style.ProductCardTitle>{cardTxt}</Style.ProductCardTitle>
         <Style.PriceAndButtons>
           <Style.ProductPrice>
             <Style.ProductNewPrice>
-              {newPrice.toLocaleString()}₽
+              {nowPrice}₽
             </Style.ProductNewPrice>
             <Style.ProductOldPrice>{oldPrice}</Style.ProductOldPrice>
           </Style.ProductPrice>
