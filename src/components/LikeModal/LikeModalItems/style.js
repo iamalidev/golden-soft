@@ -5,7 +5,7 @@ import { Colors, Flex, Fonts } from "../../../utils";
 const LikeContentWrapper = styled.div`
   width: 100%;
   ${adaptiveValue("padding-block", 24, 13)};
-  ${adaptiveValue("padding-inline", 40, 13)};
+  ${adaptiveValue('padding-inline', 40, 13)};
   overflow-y: auto;
   ${Flex.justFlex}
   align-items: center;
